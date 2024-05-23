@@ -1,4 +1,4 @@
-namespace Dungeon.Characters
+namespace DungeonCrawler
 {
     public interface ICharacter
     {

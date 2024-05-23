@@ -1,8 +1,8 @@
+using DungeonCrawler.Items;
 using System;
-using Dungeon.Items;
 using System.Collections.Generic;
 
-namespace Dungeon
+namespace DungeonCrawler
 {
 
     /// <summary>

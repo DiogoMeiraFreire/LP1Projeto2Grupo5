@@ -1,12 +1,11 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
-using Dungeon.Items;
-using Dungeon.Characters;
+using DungeonCrawler;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 
-namespace Dungeon
+namespace DungeonCrawler
 {
     public class Model
     {
