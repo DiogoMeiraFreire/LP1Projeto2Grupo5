@@ -35,6 +35,15 @@ namespace DungeonCrawler
             room.FileParser();
 
             Console.WriteLine($"{room.r_name}");
+            Console.WriteLine(room.r_des);
+            foreach(string i in room.r_items)
+            {
+                Console.WriteLine(i);
+            
+            }
+            Console.WriteLine(room.r_enemyCount);
+            
+            
 
        }
     }
