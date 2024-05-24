@@ -14,8 +14,9 @@ namespace DungeonCrawler
            /* Map map= new Map(6, 6);
 
             map.FillMap();*/
-
-            Player player= new Player("HomieI");
+            
+            //HealthPotion use test code
+            /*Player player= new Player("HomieI");
             HealthPotion potion = new HealthPotion();
 
             player.Heal(potion);
@@ -24,7 +25,7 @@ namespace DungeonCrawler
 
             player.Heal(potion);
 
-            Console.WriteLine($"{player.Health}");
+            Console.WriteLine($"{player.Health}")*/
         }
     }
            
