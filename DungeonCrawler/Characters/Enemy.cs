@@ -44,6 +44,12 @@ namespace DungeonCrawler
 
         }
 
+        public void Die()
+        {
+            throw new NotImplementedException();
+        }
+
+
 
     }
 }

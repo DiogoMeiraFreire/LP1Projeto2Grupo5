@@ -1,4 +1,9 @@
 using DungeonCrawler.Items;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
 
 namespace DungeonCrawler
 {
@@ -63,6 +68,11 @@ namespace DungeonCrawler
         public void TakeDamage(int amount)
         {
             Health -= amount;
+        }
+
+        public void Die()
+        {
+            throw new NotImplementedException();
         }
 
     }
