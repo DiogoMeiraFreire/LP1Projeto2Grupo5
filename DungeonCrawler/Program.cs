@@ -8,10 +8,11 @@ namespace DungeonCrawler
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
+            
+            //Map test code
+           /* Map map= new Map(6, 6);
 
-            Map map= new Map(6, 6);
-
-            map.FillMap();
+            map.FillMap();*/
         }
     }
            
