@@ -7,39 +7,53 @@ namespace DungeonCrawler.MVC
 {
     public class Map
     {
-        public string[,] map_s= new string[6,6];
+        public int MapY;
+        public int MapX;
+
+        public string[,] map_s;
+
+        //MapX should be Columns, MapY should be rows
+        public Map(int mapY, int mapX)
+        {
+            MapY = mapY;
+            MapX = mapX;
+
+            map_s = new string[mapY,mapX];
+
+        }
         
         //fills map with A1-F6
         public void FillMap()
         {
             
             //fills the map
-            for(int i = 0; i < 7; i++)
+            for(int i = 0; i < MapX; i++)
             {
-
+                //fills map with A-F
                 switch(i)
                     {
                         case 0:
-                            for(int y = 0; i < 6; y++){ map_s[i,y] = "A";}
+                            for(int y = 0; y < MapX; y++){ map_s[i,y] = "A";}
                             break;
                         case 1:
-                            for(int y = 0; i < 6; y++){ map_s[i,y] = "B";}
+                            for(int y = 0; y < MapX; y++){ map_s[i,y] = "B";}
                             break;
                         case 2:
-                            for(int y = 0; i < 6; y++){ map_s[i,y] = "C";}
+                            for(int y = 0; y< MapX; y++){ map_s[i,y] = "C";}
                             break;
                         case 3:
-                            for(int y = 0; i < 6; y++){ map_s[i,y] = "D";}
+                            for(int y = 0; y< MapX; y++){ map_s[i,y] = "D";}
                             break;
                         case 4:
-                            for(int y = 0; i < 6; y++){ map_s[i,y] = "E";}
+                            for(int y = 0; y< MapX; y++){ map_s[i,y] = "E";}
                             break;
                         case 5:
-                           for(int y = 0; i < 6; y++){ map_s[i,y] = "F";}
+                           for(int y = 0; y< MapX; y++){ map_s[i,y] = "F";}
                             break;
                     }
                 
-                for (int j = 0; j < 7; j++)
+                ////fills map with 1-6
+                for (int j = 0; j < MapY; j++)
                 {
                     switch(j)
                     {
