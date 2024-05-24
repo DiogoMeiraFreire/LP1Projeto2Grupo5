@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DungeonCrawler.Items;
 
 namespace DungeonCrawler
 {
@@ -27,11 +28,9 @@ namespace DungeonCrawler
 
         }
 
-        /// <summary>
-        /// Heal action with an amount variable
-        /// </summary>
-        /// <param name="amount"> amount of health to recieve </param>
-        public void Heal(int amount)
+      
+        //como nao ter de herdar isto      
+        public void Heal( HealthPotion potion)
         {
 
         }

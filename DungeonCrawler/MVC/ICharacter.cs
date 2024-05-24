@@ -1,7 +1,10 @@
+using DungeonCrawler.Items;
+
 namespace DungeonCrawler
 {
     public interface ICharacter
     {
+     
         /// <summary>
         /// Health points of a character
         /// </summary>
@@ -22,8 +25,8 @@ namespace DungeonCrawler
         /// <summary>
         /// Heal action with an amount variable
         /// </summary>
-        /// <param name="amount"> amount of health to recieve </param>
-        void Heal(int amount);
+        /// <param name="potion"> a potion that defines how much is healed </param>
+        public void Heal(HealthPotion potion);
 
         /// <summary>
         /// Removing health points (also known as taking damage)

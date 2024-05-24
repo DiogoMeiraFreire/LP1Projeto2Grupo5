@@ -1,3 +1,5 @@
+using DungeonCrawler.Items;
+
 namespace DungeonCrawler
 {
     public class Player : ICharacter
@@ -48,10 +50,10 @@ namespace DungeonCrawler
         /// <summary>
         /// Recover Player's Health Points
         /// </summary>
-        /// <param name="amount">the amount of health points to recover</param>
-        public void Heal(int amount)
+        /// <param name="healthPotion">a health potion that the player can use.</param>
+        public void Heal(HealthPotion healthPotion)
         {
-            Health += amount;
+            Health += healthPotion.Use();
         }
 
         /// <summary>
