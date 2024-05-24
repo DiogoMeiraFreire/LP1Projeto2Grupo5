@@ -1,13 +1,8 @@
 using DungeonCrawler.Items;
-using System;
 using System.Collections.Generic;
 
 namespace DungeonCrawler
 {
-
-    /// <summary>
-    /// Interface
-    /// </summary>
     public interface IView
     {
         
@@ -19,14 +14,12 @@ namespace DungeonCrawler
         /// <summary>
         /// Shows the menu
         /// </summary>
-        /// <returns></returns>
         int ShowMenu();
 
         /// <summary>
         /// Shows the inventory
         /// </summary>
         /// <param name="inventory"> a list of the inventory items </param>
-        /// <returns></returns>
         int ShowInventory(List<Item> inventory);
 
 
@@ -57,7 +50,7 @@ namespace DungeonCrawler
         /// <summary>
         /// Used to display an error message
         /// </summary>
-        /// <param name="message"></param>
+        /// <param name="message">The error message to display</param>
         void ErrorMessage(string message);
 
 

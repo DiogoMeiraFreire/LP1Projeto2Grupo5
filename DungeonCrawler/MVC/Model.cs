@@ -1,10 +1,3 @@
-using System;
-using System.IO;
-using System.Collections.Generic;
-using DungeonCrawler;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-
 namespace DungeonCrawler
 {
     public class Model
@@ -13,7 +6,6 @@ namespace DungeonCrawler
         private Player  player;
 
         public Player   Player => player;
-
 
         public void CreatePlayer(string name)
         {
@@ -25,9 +17,7 @@ namespace DungeonCrawler
             
         public bool EndGame()
         {
-            return player.Hp <= 0;
+            return player.Health <= 0;
         }
-
-    
     }
 }

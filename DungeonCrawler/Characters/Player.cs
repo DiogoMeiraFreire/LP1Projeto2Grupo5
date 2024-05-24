@@ -1,54 +1,42 @@
-using System;
-using System.Collections.Generic;
-using DungeonCrawler.Items;
-
 namespace DungeonCrawler
 {
     public class Player : ICharacter
     {
-
-
-        private int _hp; 
+        private int _health; 
 
         /// <summary>
-        /// Hp property for the Player
-        /// 
+        /// Health property for Player
         /// </summary>
-        /// <value>
-        /// Passed value will be subtracted from the current agent Hp 
-        /// Use of the property without setting a value will return the current Hp value of Traveler agent
-        /// </value>
-        public int Hp {
+        public int Health {
 
-            get { return _hp; }
+            get { return _health; }
 
 
-            set { 
-                if(_hp <= 0)
+            set 
+            { 
+                if(_health <= 0)
                 {  
-                    // kill 
+                    
                 }
 
-                _hp -= value;
+                _health -= value;
             }          
         }
 
         public string Name { get; }
 
         /// <summary>
-        /// Constructor for the Traveler Enemy
+        /// Constructor for Player
         /// </summary>
         public Player(string name = "Player")
         {
             Name            = name;
-            Hp              = 100;
+            Health              = 100;
         }
 
          /// <summary>
-        /// AttackPower property for the Traveler enemy
-        /// Read-only property set to 50 by default
+        /// AttackPower property
         /// </summary>
-        /// <value></value>
         public int AttackPower { get ; set; }
 
         //To complete and summarize
@@ -57,14 +45,22 @@ namespace DungeonCrawler
 
         }
 
+        /// <summary>
+        /// Recover Player's Health Points
+        /// </summary>
+        /// <param name="amount">the amount of health points to recover</param>
         public void Heal(int amount)
         {
-            Hp += amount;
+            Health += amount;
         }
 
+        /// <summary>
+        /// Deduct Player's Health Points
+        /// </summary>
+        /// <param name="amount">the amount of health points to deduct</param>
         public void TakeDamage(int amount)
         {
-            Hp -= amount;
+            Health -= amount;
         }
 
     }

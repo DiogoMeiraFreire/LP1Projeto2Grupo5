@@ -5,7 +5,7 @@ namespace DungeonCrawler
         /// <summary>
         /// Health points of a character
         /// </summary>
-        int Hp { get; set; }
+        int Health { get; set; }
 
 
         /// <summary>
