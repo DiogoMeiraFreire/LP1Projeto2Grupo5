@@ -1,4 +1,5 @@
 ﻿using System;
+using DungeonCrawler.Items;
 using DungeonCrawler.MVC;
 
 namespace DungeonCrawler
@@ -13,6 +14,17 @@ namespace DungeonCrawler
            /* Map map= new Map(6, 6);
 
             map.FillMap();*/
+
+            Player player= new Player("HomieI");
+            HealthPotion potion = new HealthPotion();
+
+            player.Heal(potion);
+
+            Console.WriteLine($"{player.Health}");
+
+            player.Heal(potion);
+
+            Console.WriteLine($"{player.Health}");
         }
     }
            

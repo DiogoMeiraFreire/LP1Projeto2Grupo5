@@ -26,7 +26,7 @@ namespace DungeonCrawler
                     
                 }
 
-                _health -= value;
+                _health = value;
             }          
         }
 
@@ -38,7 +38,7 @@ namespace DungeonCrawler
         public Player(string name = "Player")
         {
             Name            = name;
-            Health              = 100;
+            Health            = 100;
         }
 
          /// <summary>
