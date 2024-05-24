@@ -18,7 +18,7 @@ namespace DungeonCrawler.Items
 
         public override void Interact()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("A red liquid bends the light bouncing inside the glassy flask");
         }
 
 
