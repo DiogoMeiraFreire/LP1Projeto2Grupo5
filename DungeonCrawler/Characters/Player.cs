@@ -1,6 +1,8 @@
 using DungeonCrawler.Items;
+using DungeonCrawler.MVC;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,6 +12,8 @@ namespace DungeonCrawler
     public class Player : ICharacter
     {
         private int _health; 
+
+        public List<Item> inventory = new List<Item>();
 
         /// <summary>
         /// Health property for Player
@@ -80,5 +84,26 @@ namespace DungeonCrawler
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// A method that lets the player take an item from a room
+        /// </summary>
+        /// <param name="room">A room that has the item to take (hopefully the room where the player is)</param>
+        /// <param name="index">The index of the item inside the room's item list</param>
+        public void TakeItem(Room room, int index)
+        {
+            Item tmpItem;
+
+            if (room._potions.Count > 0 && index <= room._potions.Count)
+            {
+                tmpItem = room._potions[index];
+                room._potions.RemoveAt(index);
+                inventory.Add(tmpItem);
+            }
+            else
+            {
+                //probably have to make an ask for input method
+                return;
+            }
+        }
     }
 }

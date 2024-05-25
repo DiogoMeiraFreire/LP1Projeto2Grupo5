@@ -12,7 +12,11 @@ namespace DungeonCrawler.MVC
 
         public string[,] map_s;
 
-        //MapX should be Columns, MapY should be rows
+        /// <summary>
+        /// MapX should be Columns, MapY should be rows
+        /// </summary>
+        /// <param name="mapY">Rows</param>
+        /// <param name="mapX">Columns</param>
         public Map(int mapY, int mapX)
         {
             MapY = mapY;
@@ -22,7 +26,9 @@ namespace DungeonCrawler.MVC
 
         }
         
-        //fills map with A1-F6
+        /// <summary>
+        /// fills map with A1-F6
+        /// </summary>
         public void FillMap()
         {
             
@@ -86,6 +92,11 @@ namespace DungeonCrawler.MVC
             {
                 Console.WriteLine(s);
             }
+        }
+    
+        public Room CurrentRoom(string roomName)
+        {
+            return null;
         }
     }
 }
