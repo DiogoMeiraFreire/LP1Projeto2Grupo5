@@ -79,6 +79,14 @@ namespace DungeonCrawler
             {
                 Console.WriteLine(i);
             }*/
+
+            //Door Checker test this block will need to be implemented somewhere else
+            /*string testName = "A2";
+            if (room.DoorChecker(testName) != null && Room.RoomList.Contains(testName) == false)
+            {Room C2 = new Room(FilePath, testName);}
+            Console.WriteLine(Room.RoomList.Count);*/
+            
+            
             /*Room B2 = new Room(FilePath,"B2");
             Room C2 = new Room(FilePath,"C2");
 

@@ -6,6 +6,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using DungeonCrawler.Items;
 using System.Security.Cryptography.X509Certificates;
+using System.Data;
 
 namespace DungeonCrawler.MVC
 {
@@ -17,7 +18,7 @@ namespace DungeonCrawler.MVC
         public string FilePath{ get;}
         public string R_iD{get;}
 
-        public static List<Room> RoomList = new List<Room>();
+        public static List<string> RoomList = new List<string>();
 
         public Room(string filePath, string r_iD)
         {
@@ -32,7 +33,7 @@ namespace DungeonCrawler.MVC
             R_enemies = _enemies;
             R_potions = _potions;
             R_doors = _doors;
-            RoomList.Add(this);    
+            RoomList.Add(this.R_iD);    
             //Room_entities = room_entities;
 
             FileParser();
@@ -75,7 +76,6 @@ namespace DungeonCrawler.MVC
         {
             _name = R_iD;
           
-                
             //Logic to dissect the text, can be put in a different method that uses the room name as parameter?
             foreach(string line in File.ReadLines(FilePath))
             {
@@ -140,17 +140,19 @@ namespace DungeonCrawler.MVC
         } 
 
         /// <summary>
-        /// Checks the instance door array to see if the param is valid
+        /// Checks the instance door array to see if the param is valid (maybe this could be in map)
         /// </summary>
         /// <param name="door">Door like the door ID</param>
         /// <returns></returns>
         public string DoorChecker(string door)
         {
-            foreach(string d in R_doors)
+            bool d_check = false;
+            foreach(string d in _doors)
             {
-                //if()
+                if(d == door){d_check = true;}
             }
-            return door;
+            if (d_check == false){return null;}
+            else{return door;}
         }
 
         //unecessary (possibly)
