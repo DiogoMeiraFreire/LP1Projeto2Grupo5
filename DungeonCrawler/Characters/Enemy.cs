@@ -56,30 +56,24 @@ namespace DungeonCrawler
         /// Removing health points (also known as taking damage) 
         /// </summary>
         /// <param name="amount"> amount of damage to take </param>
-        public void EnemyTakeDamage(int amount)
+        public void TakeDamage(int amount)
         {
             Health -= amount;
             if (this.Health < 0)
             {
-                this.EnemyDie(room, L_Index);
+                this.EnemyDie(room);
             }   
         }
 
-        public void EnemyDie(Room room, int index)
+        public void EnemyDie(Room room)
         {
-             
+             room._enemies.Remove(this);
         }
 
         public void Die()
         {
             throw new NotImplementedException();
         }
-        public void TakeDamage(int i)
-        {
-            throw new NotImplementedException();
-        }
-
-
 
 
     }

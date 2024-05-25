@@ -49,7 +49,7 @@ namespace DungeonCrawler
             Console.WriteLine(FilePath);
 
             Room room = new Room(FilePath,"C2");
-            room.EntityPopulator();
+            //room.EntityPopulator();
             
             if (!File.Exists(FilePath) || new FileInfo(FilePath).Length == 0)
             {
@@ -92,7 +92,7 @@ namespace DungeonCrawler
             //Console.WriteLine(room._enemyCount.Length);
             Enemy tmpenemy = room._enemies[0];
 
-            Console.WriteLine(tmpenemy.E_room);
+            Console.WriteLine(tmpenemy.E_room._name);
 
        }
     }
