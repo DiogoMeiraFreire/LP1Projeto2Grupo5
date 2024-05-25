@@ -98,6 +98,17 @@ namespace DungeonCrawler
             Console.WriteLine("\n"+C2._potions.Count);
             Console.WriteLine(C2._enemies.Count);*/
 
+            Player player= new Player("jeremy");
+
+            Console.WriteLine(room._potions.Count);
+            player.TakeItem(room,0);
+
+            Console.WriteLine("\n"+room._potions.Count);
+            Console.WriteLine(player.inventory.Count);
+
+            player.Heal(0);
+            Console.WriteLine("\n"+player.inventory.Count);
+            Console.WriteLine(player.Health);
             
 
        }

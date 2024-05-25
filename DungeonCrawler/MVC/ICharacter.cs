@@ -26,7 +26,7 @@ namespace DungeonCrawler
         /// Heal action with an amount variable
         /// </summary>
         /// <param name="potion"> a potion that defines how much is healed </param>
-        void Heal(HealthPotion potion);
+        void Heal(int index);
 
         /// <summary>
         /// Removing health points (also known as taking damage)

@@ -37,7 +37,7 @@ namespace DungeonCrawler
 
       
         //como nao ter de herdar isto      
-        public void Heal( HealthPotion potion)
+        public void Heal( int index)
         {
             throw new NotImplementedException();
         }

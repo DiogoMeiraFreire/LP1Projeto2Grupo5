@@ -60,10 +60,11 @@ namespace DungeonCrawler
         /// Recover Player's Health Points
         /// </summary>
         /// <param name="healthPotion">a health potion that the player can use.</param>
-        public void Heal(HealthPotion healthPotion)
+        public void Heal(int index)
         {
-            Health += healthPotion.Use();
-            inventory.Remove(healthPotion);
+            Item tmpItem = inventory[index];
+            Health += tmpItem.Use();
+            inventory.RemoveAt(index);
         }
 
         /// <summary>
