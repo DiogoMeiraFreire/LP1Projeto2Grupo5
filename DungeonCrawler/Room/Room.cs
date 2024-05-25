@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.CompilerServices;
+using DungeonCrawler.Items;
+using System.Security.Cryptography.X509Certificates;
 
 namespace DungeonCrawler.MVC
 {
@@ -28,11 +30,17 @@ namespace DungeonCrawler.MVC
         private string r_item_string;
         public string[] r_items;
         public string[] R_items;
-        public int r_enemyCount;
-        public int R_enemyCount;
+        public List<HealthPotion> R_potions = new List<HealthPotion>();
+        public List<HealthPotion> r_potions= new List<HealthPotion>();
 
-        public List<object> Room_entities = new List<object>();
-        public List<object> room_entities= new List<object>();
+        private string r_enemyCount_string;
+        public string[] r_enemyCount;
+        public string[] R_enemyCount;
+        public List<Enemy> R_enemies = new List<Enemy>();
+        public List<Enemy> r_enemies= new List<Enemy>();
+
+        /*public List<object> Room_entities = new List<object>();
+        public List<object> room_entities= new List<object>();*/
 
         public Room()
         {
@@ -40,7 +48,9 @@ namespace DungeonCrawler.MVC
             R_des = r_des;
             R_items = r_items;
             R_enemyCount = r_enemyCount;
-            Room_entities = room_entities;
+            R_enemies = r_enemies;
+            R_potions = r_potions;
+            //Room_entities = room_entities;
 
         }
         
@@ -54,49 +64,68 @@ namespace DungeonCrawler.MVC
             r_name = r_iD;
           
                 
-                //Logic to dissect the text, can be put in a different method that uses the room name as parameter?
-                foreach(string line in File.ReadLines(FilePath))
+            //Logic to dissect the text, can be put in a different method that uses the room name as parameter?
+            foreach(string line in File.ReadLines(FilePath))
+            {
+                /*if (line.Contains("R_N"))
                 {
-                    /*if (line.Contains("R_N"))
-                    {
-                        r_name = line.Replace("R_N:", "");
-                    }*/
-                    if (line.Contains(r_iD) && line.Contains("R_Des"))
-                    {
-                        r_des = line.Replace(r_iD +"_R_Des:", "");
-                    }
-                    if (line.Contains(r_iD) && line.Contains("R_Itm"))
-                    {
-                        //Console.WriteLine(line);
-                        r_item_string = line.Replace(r_iD +"_R_Itm:", "");
-                        r_items = r_item_string.Split('_');
-                        //Console.WriteLine(r_item_string);
-
-                    }
-                    //this is buggy
-                    if (line.Contains(r_iD) && line.Contains(r_iD +"_R_E:"))
-                    {
-                        line.Replace("R_E:", "");
-                        r_enemyCount = line.Split('_').Length;
-                    }
-                    
+                    r_name = line.Replace("R_N:", "");
+                }*/
+                if (line.Contains(r_iD) && line.Contains("R_Des"))
+                {
+                    r_des = line.Replace(r_iD +"_R_Des:", "");
                 }
-        
-            
+                if (line.Contains(r_iD) && line.Contains("R_Itm"))
+                {
+                    //Console.WriteLine(line);
+                    r_item_string = line.Replace(r_iD +"_R_Itm:", "");
+                    r_items = r_item_string.Split('_');
+                    //Console.WriteLine(r_item_string);
+
+                }
+                //this is buggy
+                if (line.Contains(r_iD) && line.Contains("R_E:"))
+                {
+                    r_enemyCount_string = line.Replace(r_iD +"_R_E:", "");
+                    r_enemyCount = r_enemyCount_string.Split('_');
+                }
+                
+            }
             
         }
 
+        //not working
         public void EntityPopulator()
         {
-           foreach(string i in r_items)
+           if (r_items == null)
            {
-            room_entities.Add(i);
+            Console.WriteLine("Items array is null. Make sure to call FileParser first.");
+            return;
            }
-           for(int i = 0; i < r_enemyCount; i++)
+           else
            {
-            Enemy enemy = new Enemy();
-            room_entities.Add(enemy);
+            foreach(string i in r_items)
+            {
+                HealthPotion potion = new HealthPotion();
+                r_potions.Add(potion);
+            }
            }
+           
+           if (r_enemyCount == null)
+           {
+            Console.WriteLine("Enemy array is null. Make sure to call FileParser first.");
+            return;
+           }
+           else
+           {
+                foreach(string i in r_enemyCount)
+                {
+                    Enemy enemy = new Enemy(i);
+                    r_enemies.Add(enemy);
+                }
+           }
+
+           
         } 
 
         //unecessary (possibly)

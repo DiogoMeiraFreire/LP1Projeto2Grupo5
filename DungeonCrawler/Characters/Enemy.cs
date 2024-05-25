@@ -8,6 +8,7 @@ namespace DungeonCrawler
 {
     public class Enemy : ICharacter
     {
+        public string Name { get; }
         /// <summary>
         /// Health points of a character
         /// </summary>
@@ -18,6 +19,12 @@ namespace DungeonCrawler
         /// Attack Power of a character
         /// </summary>
         public int AttackPower { get; set; }
+
+        public Enemy(string name = "Enemy")
+        {
+            Name            = name;
+            Health            = 100;
+        }
 
         /// <summary>
         /// Attack action towards a specific target

@@ -6,6 +6,6 @@ A1_R_E:Enemy
 R_N:C2
 C2_R_Des:"Checkered 4x4 room"
 C2_R_Itm:Potion_Book_Potion
-C2_R_E:Enemy_Enemy
+C2_R_E:Diogo_Andre
 
 
