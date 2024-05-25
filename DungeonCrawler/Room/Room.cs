@@ -15,12 +15,23 @@ namespace DungeonCrawler.MVC
         
        
         public string FilePath{ get;}
-        //public string r_iD;
+        public string R_iD{get;}
 
-        public Room(string filePath)
+        public Room(string filePath, string r_iD)
         {
             FilePath = filePath;
+            R_iD = r_iD;
+
+
+            R_name = r_name;
+            R_des = r_des;
+            R_items = r_items;
+            R_enemyCount = r_enemyCount;
+            R_enemies = r_enemies;
+            R_potions = r_potions;
+            //Room_entities = room_entities;
         }
+
         public string r_name;
         public string R_name;
 
@@ -42,26 +53,16 @@ namespace DungeonCrawler.MVC
         /*public List<object> Room_entities = new List<object>();
         public List<object> room_entities= new List<object>();*/
 
-        public Room()
-        {
-            R_name = r_name;
-            R_des = r_des;
-            R_items = r_items;
-            R_enemyCount = r_enemyCount;
-            R_enemies = r_enemies;
-            R_potions = r_potions;
-            //Room_entities = room_entities;
-
-        }
+      
         
 
         /// <summary>
         /// Parses the room txt file to gather the information necessary for that specific instance of a room
         /// </summary>
         /// <param name="r_iD">Room ID (should come from map array)</param>
-        public void FileParser(string r_iD)
+        public void FileParser()
         {
-            r_name = r_iD;
+            r_name = R_iD;
           
                 
             //Logic to dissect the text, can be put in a different method that uses the room name as parameter?
@@ -71,22 +72,22 @@ namespace DungeonCrawler.MVC
                 {
                     r_name = line.Replace("R_N:", "");
                 }*/
-                if (line.Contains(r_iD) && line.Contains("R_Des"))
+                if (line.Contains(R_iD) && line.Contains("R_Des"))
                 {
-                    r_des = line.Replace(r_iD +"_R_Des:", "");
+                    r_des = line.Replace(R_iD+"_R_Des:", "");
                 }
-                if (line.Contains(r_iD) && line.Contains("R_Itm"))
+                if (line.Contains(R_iD) && line.Contains("R_Itm"))
                 {
                     //Console.WriteLine(line);
-                    r_item_string = line.Replace(r_iD +"_R_Itm:", "");
+                    r_item_string = line.Replace(R_iD+"_R_Itm:", "");
                     r_items = r_item_string.Split('_');
                     //Console.WriteLine(r_item_string);
 
                 }
                 //this is buggy
-                if (line.Contains(r_iD) && line.Contains("R_E:"))
+                if (line.Contains(R_iD) && line.Contains("R_E:"))
                 {
-                    r_enemyCount_string = line.Replace(r_iD +"_R_E:", "");
+                    r_enemyCount_string = line.Replace(R_iD+"_R_E:", "");
                     r_enemyCount = r_enemyCount_string.Split('_');
                 }
                 

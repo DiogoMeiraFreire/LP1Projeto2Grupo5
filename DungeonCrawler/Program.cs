@@ -46,7 +46,7 @@ namespace DungeonCrawler
             string FilePath = Path.Combine(projectDirectory, fileName);
             Console.WriteLine(FilePath);
 
-            Room room = new Room(FilePath);
+            Room room = new Room(FilePath,"C2");
             
             
             if (!File.Exists(FilePath) || new FileInfo(FilePath).Length == 0)
@@ -55,7 +55,7 @@ namespace DungeonCrawler
             }
 
 
-            room.FileParser("C2");
+            room.FileParser();
             room.EntityPopulator();
 
             Console.WriteLine($"{room.r_name}");
