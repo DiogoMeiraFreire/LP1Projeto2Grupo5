@@ -2,6 +2,7 @@
 using DungeonCrawler.Items;
 using DungeonCrawler.MVC;
 using System.IO;
+using System.Security.Principal;
 
 namespace DungeonCrawler
 {
@@ -46,6 +47,7 @@ namespace DungeonCrawler
             Console.WriteLine(FilePath);
 
             Room room = new Room(FilePath);
+            //room.EntityPopulator();
             
             if (!File.Exists(FilePath) || new FileInfo(FilePath).Length == 0)
             {
@@ -53,7 +55,7 @@ namespace DungeonCrawler
             }
 
 
-            room.FileParser("C2");
+            room.FileParser("A1");
 
             Console.WriteLine($"{room.r_name}");
             Console.WriteLine(room.r_des);
@@ -62,6 +64,8 @@ namespace DungeonCrawler
                 Console.WriteLine(i);
             }
             Console.WriteLine(room.r_enemyCount);
+
+            Console.WriteLine(room.room_entities.Count);
             
             
 

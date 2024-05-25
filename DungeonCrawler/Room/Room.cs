@@ -31,8 +31,8 @@ namespace DungeonCrawler.MVC
         public int r_enemyCount;
         public int R_enemyCount;
 
-        List<object> Room_entities = new List<object>();
-        List<object> room_entities= new List<object>();
+        public List<object> Room_entities = new List<object>();
+        public List<object> room_entities= new List<object>();
 
         public Room()
         {
@@ -52,52 +52,50 @@ namespace DungeonCrawler.MVC
         public void FileParser(string r_iD)
         {
             r_name = r_iD;
-            foreach(string line1 in File.ReadLines(FilePath))
-            {
-                if (line1.Contains(r_iD))
-                {
+          
                 
-                    //Logic to dissect the text, can be put in a different method that uses the room name as parameter?
-                    foreach(string line in File.ReadLines(FilePath))
+                //Logic to dissect the text, can be put in a different method that uses the room name as parameter?
+                foreach(string line in File.ReadLines(FilePath))
+                {
+                    /*if (line.Contains("R_N"))
                     {
-                        /*if (line.Contains("R_N"))
-                        {
-                            r_name = line.Replace("R_N:", "");
-                        }*/
-                        if (line.Contains("R_Des"))
-                        {
-                            r_des = line.Replace("R_Des:", "");
-                        }
-                        if (line.Contains("R_Itm"))
-                        {
-                            //Console.WriteLine(line);
-                            r_item_string = line.Replace("R_Itm:", "");
-                            r_items = r_item_string.Split('_');
-                            //Console.WriteLine(r_item_string);
-
-                        }
-                        if (line.Contains("R_E:"))
-                        {
-                            line.Replace("R_E:", "");
-                            r_enemyCount = line.Split('_').Length;
-                        }
-                        
+                        r_name = line.Replace("R_N:", "");
+                    }*/
+                    if (line.Contains(r_iD) && line.Contains("R_Des"))
+                    {
+                        r_des = line.Replace(r_iD +"_R_Des:", "");
                     }
+                    if (line.Contains(r_iD) && line.Contains("R_Itm"))
+                    {
+                        //Console.WriteLine(line);
+                        r_item_string = line.Replace(r_iD +"_R_Itm:", "");
+                        r_items = r_item_string.Split('_');
+                        //Console.WriteLine(r_item_string);
+
+                    }
+                    //this is buggy
+                    if (line.Contains(r_iD) && line.Contains(r_iD +"_R_E:"))
+                    {
+                        line.Replace("R_E:", "");
+                        r_enemyCount = line.Split('_').Length;
+                    }
+                    
                 }
-            }   
+        
+            
             
         }
 
         public void EntityPopulator()
         {
-           foreach(string i in R_items)
+           foreach(string i in r_items)
            {
-            Room_entities.Add(i);
+            room_entities.Add(i);
            }
-           for(int i = 0; i < R_enemyCount; i++)
+           for(int i = 0; i < r_enemyCount; i++)
            {
             Enemy enemy = new Enemy();
-            Room_entities.Add(enemy);
+            room_entities.Add(enemy);
            }
         } 
 

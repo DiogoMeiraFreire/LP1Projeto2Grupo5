@@ -1,9 +1,11 @@
 R_N:A1
-R_Des:Room 0
-R_Itm:Potion_Book
-R_E:Enemy
+A1_R_Des:Room 0
+A1_R_Itm:Potion_Book
+A1_R_E:Enemy
 
 R_N:C2
-R_Des:"Checkered 4x4 room"
-R_Itm:Potion_Book_Potion
-R_E:Enemy_Enemy
+C2_R_Des:"Checkered 4x4 room"
+C2_R_Itm:Potion_Book_Potion
+C2_R_E:Enemy_Enemy
+
+
