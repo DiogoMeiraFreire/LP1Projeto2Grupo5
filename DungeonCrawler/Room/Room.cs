@@ -13,6 +13,7 @@ namespace DungeonCrawler.MVC
         
        
         public string FilePath{ get;}
+        //public string r_iD;
 
         public Room(string filePath)
         {
@@ -45,38 +46,44 @@ namespace DungeonCrawler.MVC
         
 
         /// <summary>
-        /// Parses a file with every room description
+        /// Parses the room txt file to gather the information necessary for that specific instance of a room
         /// </summary>
-        public void FileParser()
+        /// <param name="r_iD">Room ID (should come from map array)</param>
+        public void FileParser(string r_iD)
         {
-            //Console.WriteLine($"{FilePath}");
-            //foreach (string line in File.ReadLines(@"D:\UNI\4oAno\LP1\LP1Proj2Grupo05\LP1Projeto2Grupo5\DungeonCrawler\testDesc.txt"))
-            
-            //Logic to dissect the text, can be put in a different method that uses the room name as parameter?
-            foreach(string line in File.ReadLines(FilePath))
+            r_name = r_iD;
+            foreach(string line1 in File.ReadLines(FilePath))
             {
-                if (line.Contains("R_N"))
+                if (line1.Contains(r_iD))
                 {
-                    r_name = line.Replace("R_N:", "");
-                }
-                if (line.Contains("R_Des"))
-                {
-                    r_des = line.Replace("R_Des:", "");
-                }
-                if (line.Contains("R_Itm"))
-                {
-                    //Console.WriteLine(line);
-                    r_item_string = line.Replace("R_Itm:", "");
-                    r_items = r_item_string.Split('_');
-                    //Console.WriteLine(r_item_string);
-
-                }
-                if (line.Contains("R_E:"))
-                {
-                    line.Replace("R_E:", "");
-                    r_enemyCount = line.Split('_').Length;
-                }
                 
+                    //Logic to dissect the text, can be put in a different method that uses the room name as parameter?
+                    foreach(string line in File.ReadLines(FilePath))
+                    {
+                        /*if (line.Contains("R_N"))
+                        {
+                            r_name = line.Replace("R_N:", "");
+                        }*/
+                        if (line.Contains("R_Des"))
+                        {
+                            r_des = line.Replace("R_Des:", "");
+                        }
+                        if (line.Contains("R_Itm"))
+                        {
+                            //Console.WriteLine(line);
+                            r_item_string = line.Replace("R_Itm:", "");
+                            r_items = r_item_string.Split('_');
+                            //Console.WriteLine(r_item_string);
+
+                        }
+                        if (line.Contains("R_E:"))
+                        {
+                            line.Replace("R_E:", "");
+                            r_enemyCount = line.Split('_').Length;
+                        }
+                        
+                    }
+                }
             }   
             
         }

@@ -53,7 +53,7 @@ namespace DungeonCrawler
             }
 
 
-            room.FileParser();
+            room.FileParser("C2");
 
             Console.WriteLine($"{room.r_name}");
             Console.WriteLine(room.r_des);
