@@ -63,6 +63,7 @@ namespace DungeonCrawler
         public void Heal(HealthPotion healthPotion)
         {
             Health += healthPotion.Use();
+            inventory.Remove(healthPotion);
         }
 
         /// <summary>
