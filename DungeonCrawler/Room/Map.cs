@@ -94,7 +94,7 @@ namespace DungeonCrawler.MVC
             }
         }
     
-        public Room CurrentRoom(string roomName)
+        public Room CurrentRoom()
         {
             return null;
         }

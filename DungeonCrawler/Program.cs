@@ -3,6 +3,7 @@ using DungeonCrawler.Items;
 using DungeonCrawler.MVC;
 using System.IO;
 using System.Security.Principal;
+using System.Linq;
 
 namespace DungeonCrawler
 {
@@ -47,38 +48,13 @@ namespace DungeonCrawler
             string FilePath = Path.Combine(projectDirectory, fileName);
             Console.WriteLine(FilePath);
 
-            Room room = new Room(FilePath,"A1");
-            
+            Room room = new Room(FilePath,"C2");
+            room.EntityPopulator();
             
             if (!File.Exists(FilePath) || new FileInfo(FilePath).Length == 0)
             {
                 room.CreateFile(FilePath);
             }
-
-            //room test code
-            /*
-            room.FileParser();
-            room.EntityPopulator();
-
-           
-            Console.WriteLine($"{room._name}");
-            Console.WriteLine(room._des);
-            foreach(string i in room._items)
-            {
-                Console.WriteLine(i);
-            }
-            foreach(string i in room._enemyCount)
-            {
-                Console.WriteLine(i);
-            }
-
-            Console.WriteLine(room._potions.Count);
-            Console.WriteLine(room._enemies.Count);
-            
-            foreach(string i in room._doors)
-            {
-                Console.WriteLine(i);
-            }*/
 
             //Door Checker test this block will need to be implemented somewhere else
             /*string testName = "A2";
@@ -98,6 +74,8 @@ namespace DungeonCrawler
             Console.WriteLine("\n"+C2._potions.Count);
             Console.WriteLine(C2._enemies.Count);*/
 
+            // Healing Pot Test
+            /*
             Player player= new Player("jeremy");
 
             Console.WriteLine(room._potions.Count);
@@ -109,7 +87,12 @@ namespace DungeonCrawler
             player.Heal(0);
             Console.WriteLine("\n"+player.inventory.Count);
             Console.WriteLine(player.Health);
-            
+            */
+            //Console.WriteLine(room._enemies.Count);
+            //Console.WriteLine(room._enemyCount.Length);
+            Enemy tmpenemy = room._enemies[0];
+
+            Console.WriteLine(tmpenemy.E_room);
 
        }
     }

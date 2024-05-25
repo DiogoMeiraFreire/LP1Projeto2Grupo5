@@ -1,4 +1,5 @@
 using DungeonCrawler.Items;
+using Microsoft.VisualBasic;
 
 namespace DungeonCrawler
 {
@@ -26,15 +27,16 @@ namespace DungeonCrawler
         /// Heal action with an amount variable
         /// </summary>
         /// <param name="potion"> a potion that defines how much is healed </param>
-        void Heal(int index);
+        public abstract void Heal(int index);
+      
 
         /// <summary>
         /// Removing health points (also known as taking damage)
         /// </summary>
         /// <param name="amount"> amount of damage to take </param>
-        void TakeDamage(int amount);
+        public abstract void TakeDamage(int amount);
 
-         void Die();
+        public abstract void Die();
 
     }
 }

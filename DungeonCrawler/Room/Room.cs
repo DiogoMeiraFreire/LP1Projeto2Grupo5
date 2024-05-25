@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using DungeonCrawler.Items;
 using System.Security.Cryptography.X509Certificates;
 using System.Data;
+using System.Dynamic;
 
 namespace DungeonCrawler.MVC
 {
@@ -37,7 +38,7 @@ namespace DungeonCrawler.MVC
             //Room_entities = room_entities;
 
             FileParser();
-            EntityPopulator();
+            //EntityPopulator();
         }
 
         public string _name;
@@ -91,7 +92,9 @@ namespace DungeonCrawler.MVC
                 if (line.Contains(R_iD) && line.Contains("R_E:"))
                 {
                     _enemyCount_string = line.Replace(R_iD+"_R_E:", "");
+                    Console.WriteLine("" + _enemyCount_string);
                     _enemyCount = _enemyCount_string.Split('_');
+                    Console.WriteLine("" + _enemyCount.Length);
                 }
                 if (line.Contains(R_iD.ToLower()) && line.Contains("R_D"))
                 {
@@ -131,7 +134,8 @@ namespace DungeonCrawler.MVC
            {
                 foreach(string i in _enemyCount)
                 {
-                    Enemy enemy = new Enemy(i);
+                    Enemy enemy = new Enemy(i, this);
+                    //enemy.
                     _enemies.Add(enemy);
                 }
            }
@@ -153,6 +157,13 @@ namespace DungeonCrawler.MVC
             }
             if (d_check == false){return null;}
             else{return door;}
+        }
+        
+        public int GetIndex(Enemy enemy)
+        {
+            int ret;
+            ret = _enemies.IndexOf(enemy);
+            return ret;
         }
 
         //unecessary (possibly)
@@ -216,5 +227,6 @@ namespace DungeonCrawler.MVC
             return description;
         }
         
+    
     }
 }

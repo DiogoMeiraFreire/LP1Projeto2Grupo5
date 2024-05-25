@@ -51,16 +51,16 @@ namespace DungeonCrawler
         public int AttackPower { get ; set; }
 
         //To complete and summarize
-        public void Attack(ICharacter target)
+        public void PlayerAttack(Enemy target)
         {
-            target.TakeDamage(this.AttackPower);
+            target.EnemyTakeDamage(this.AttackPower);
         }
 
         /// <summary>
         /// Recover Player's Health Points
         /// </summary>
         /// <param name="healthPotion">a health potion that the player can use.</param>
-        public void Heal(int index)
+        public void Heal( int index)
         {
             Item tmpItem = inventory[index];
             Health += tmpItem.Use();
@@ -106,6 +106,11 @@ namespace DungeonCrawler
                 //probably have to make an ask for input method
                 return;
             }
+        }
+
+        public void Attack(ICharacter target)
+        {
+            throw new NotImplementedException();
         }
     }
 }
