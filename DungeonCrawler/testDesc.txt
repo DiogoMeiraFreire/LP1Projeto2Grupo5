@@ -2,18 +2,18 @@ R_N:A1
 A1_R_Des:Room 0
 A1_R_Itm:Potion_Book
 A1_R_E:Enemy
-A1_R_D:C2
+a1_R_D:C2_O3
 
 R_N:C2
 C2_R_Des:"Checkered 4x4 room"
 C2_R_Itm:Potion_Book_Potion
 C2_R_E:Diogo_Andre
-C2_R_D:C1_B2_D2_C3
+c2_R_D:C1_B2_D2_C3
 
 R_N:B2
 B2_R_Des:"Checkered 4x4 room"
 B2_R_Itm:Potion_Book_Potion
 B2_R_E:Diogo_Andre
-B2_R_D:C2
+b2_R_D:C2
 
 

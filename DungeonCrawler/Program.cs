@@ -74,7 +74,11 @@ namespace DungeonCrawler
 
             Console.WriteLine(room._potions.Count);
             Console.WriteLine(room._enemies.Count);
-            */
+            
+            foreach(string i in room._doors)
+            {
+                Console.WriteLine(i);
+            }*/
             /*Room B2 = new Room(FilePath,"B2");
             Room C2 = new Room(FilePath,"C2");
 

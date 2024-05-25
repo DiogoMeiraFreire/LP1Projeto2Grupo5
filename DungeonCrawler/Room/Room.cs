@@ -34,6 +34,7 @@ namespace DungeonCrawler.MVC
             R_doors = _doors;
             RoomList.Add(this);    
             //Room_entities = room_entities;
+
             FileParser();
             EntityPopulator();
         }
@@ -56,7 +57,7 @@ namespace DungeonCrawler.MVC
         public List<Enemy> R_enemies = new List<Enemy>();
         public List<Enemy> _enemies= new List<Enemy>();
 
-        public string _doors_string;
+        private string _doors_string;
         public string[] _doors;
         public string[] R_doors;
 
@@ -92,10 +93,11 @@ namespace DungeonCrawler.MVC
                     _enemyCount_string = line.Replace(R_iD+"_R_E:", "");
                     _enemyCount = _enemyCount_string.Split('_');
                 }
-                if (line.Contains(R_iD) && line.Contains("R_D"))
+                if (line.Contains(R_iD.ToLower()) && line.Contains("R_D"))
                 {
-                    r_item_string = line.Replace(R_iD+"_R_D:", "");
-                    _items = r_item_string.Split('_');
+                    _doors_string = line.Replace(R_iD.ToLower()+"_R_D:", "");
+                    //Console.WriteLine("\n_doors:"+_doors_string);
+                    _doors = _doors_string.Split('_');
                 }      
             }
             
@@ -137,9 +139,17 @@ namespace DungeonCrawler.MVC
            
         } 
 
+        /// <summary>
+        /// Checks the instance door array to see if the param is valid
+        /// </summary>
+        /// <param name="door">Door like the door ID</param>
+        /// <returns></returns>
         public string DoorChecker(string door)
         {
-            //if ()
+            foreach(string d in R_doors)
+            {
+                //if()
+            }
             return door;
         }
 
