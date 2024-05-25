@@ -14,6 +14,11 @@ namespace DungeonCrawler
             else
                 player = new Player("Player");
         }
+
+        public void EntityRemover(object toBeRem)
+        {
+            toBeRem = null;
+        }
             
         public bool EndGame()
         {

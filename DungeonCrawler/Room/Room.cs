@@ -19,11 +19,30 @@ namespace DungeonCrawler.MVC
             FilePath = filePath;
         }
         public string r_name;
-        public string r_des;
+        public string R_name;
 
-        public string r_item_string;
+        public string r_des;
+        public string R_des;
+
+        private string r_item_string;
         public string[] r_items;
+        public string[] R_items;
         public int r_enemyCount;
+        public int R_enemyCount;
+
+        List<object> Room_entities = new List<object>();
+        List<object> room_entities= new List<object>();
+
+        public Room()
+        {
+            R_name = r_name;
+            R_des = r_des;
+            R_items = r_items;
+            R_enemyCount = r_enemyCount;
+            Room_entities = room_entities;
+
+        }
+        
 
         /// <summary>
         /// Parses a file with every room description
@@ -62,6 +81,20 @@ namespace DungeonCrawler.MVC
             
         }
 
+        public void EntityPopulator()
+        {
+           foreach(string i in R_items)
+           {
+            Room_entities.Add(i);
+           }
+           for(int i = 0; i < R_enemyCount; i++)
+           {
+            Enemy enemy = new Enemy();
+            Room_entities.Add(enemy);
+           }
+        } 
+
+        //unecessary (possibly)
         public void CreateFile(string FilePath)
         {            
             //StreamWriter as the AppendText for easier understanding
@@ -87,6 +120,7 @@ namespace DungeonCrawler.MVC
             }
         }
 
+        //unecessary (possibly)
         public string RoomDescription(int number)
         {
             string description = "";

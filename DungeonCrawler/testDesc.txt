@@ -1,0 +1,4 @@
+R_N:A1
+R_Des:Room 0
+R_Itm:Potion_Book
+R_E:Enemy

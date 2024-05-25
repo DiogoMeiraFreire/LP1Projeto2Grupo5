@@ -49,7 +49,7 @@ namespace DungeonCrawler
         //To complete and summarize
         public void Attack(ICharacter target)
         {
-
+            target.TakeDamage(this.AttackPower);
         }
 
         /// <summary>
@@ -68,6 +68,11 @@ namespace DungeonCrawler
         public void TakeDamage(int amount)
         {
             Health -= amount;
+            if (this.Health < 0)
+            {
+                this.Die();
+            }
+
         }
 
         public void Die()

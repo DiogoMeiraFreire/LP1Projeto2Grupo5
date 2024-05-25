@@ -8,7 +8,7 @@ namespace DungeonCrawler
 {
     public class Enemy : ICharacter
     {
-               /// <summary>
+        /// <summary>
         /// Health points of a character
         /// </summary>
         public int Health { get; set; }
@@ -25,14 +25,14 @@ namespace DungeonCrawler
         /// <param name="target"> the target to attack </param>
         public void Attack(ICharacter target)
         {
-
+            target.TakeDamage(this.AttackPower);
         }
 
       
         //como nao ter de herdar isto      
         public void Heal( HealthPotion potion)
         {
-
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -41,12 +41,16 @@ namespace DungeonCrawler
         /// <param name="amount"> amount of damage to take </param>
         public void TakeDamage(int amount)
         {
-
+            Health -= amount;
+            if (this.Health < 0)
+            {
+                this.Die();
+            }   
         }
 
         public void Die()
         {
-            throw new NotImplementedException();
+             
         }
 
 
