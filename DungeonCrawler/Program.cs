@@ -29,8 +29,29 @@ namespace DungeonCrawler
             Console.WriteLine($"{player.Health}")*/
 
 
-            string filePath = @"D:\UNI\4oAno\LP1\LP1Proj2Grupo05\LP1Projeto2Grupo5\DungeonCrawler\testDesc.txt";
-            Room room = new Room(filePath);
+            string fileName = @"testDesc.txt";
+
+            // Get the directory and remove a part of if to avoid conflicts
+            string projectDirectory = Directory.GetCurrentDirectory();
+            string stringToRemove = @"\bin\Debug\net6.0";
+            int index = projectDirectory.IndexOf(stringToRemove);
+            if(index >= 0)
+            {
+                projectDirectory = projectDirectory.Remove(index, 
+                                                        stringToRemove.Length);
+            }
+
+            //Combine the current directory with the fileName to get the path
+            string FilePath = Path.Combine(projectDirectory, fileName);
+            Console.WriteLine(FilePath);
+
+            Room room = new Room(FilePath);
+            
+            if (!File.Exists(FilePath) || new FileInfo(FilePath).Length == 0)
+            {
+                room.CreateFile(FilePath);
+            }
+
 
             room.FileParser();
 
@@ -39,7 +60,6 @@ namespace DungeonCrawler
             foreach(string i in room.r_items)
             {
                 Console.WriteLine(i);
-            
             }
             Console.WriteLine(room.r_enemyCount);
             

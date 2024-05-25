@@ -1,4 +1,0 @@
-R_N:A1
-R_Des:"A 4 by 4 cube with a checkered pattern"
-R_Itm:Potion_Potion_Book
-R_E:Enemy_Enemy

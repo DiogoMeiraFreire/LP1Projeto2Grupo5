@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace DungeonCrawler.MVC
 {
@@ -59,6 +60,65 @@ namespace DungeonCrawler.MVC
                 
             }   
             
+        }
+
+        public void CreateFile(string FilePath)
+        {            
+            //StreamWriter as the AppendText for easier understanding
+            //We use "using" here to keep the file open while writting
+            //(and because any other way would give errors)
+            using(StreamWriter sw = File.AppendText(FilePath))
+            {
+                //Room identifier
+                //A1 just for testing, still need to make the room by order
+                //Maybe a function? I'm not sure yet
+                sw.WriteLine("R_N:" + "A1");
+
+                //Room Description
+                //Chooses random description from the Function RoomDescription
+                Random random = new Random();
+                sw.WriteLine("R_Des:" + RoomDescription(random.Next(0, 5)));
+
+                //Both of these next ones are just for testing
+                //Room Items
+                sw.WriteLine("R_Itm:" + "Potion" + "_" + "Book");
+                //Room Enemies
+                sw.WriteLine("R_E:" + "Enemy");
+            }
+        }
+
+        public string RoomDescription(int number)
+        {
+            string description = "";
+
+            switch (number)
+            {
+                case 0:
+                    description = "Room 0";
+                break;
+
+                case 1:
+                    description = "Room 1";
+                break;
+
+                case 2:
+                    description = "Room 2";
+                break;
+
+                case 3:
+                    description = "Room 3";
+                break;
+
+                case 4:
+                    description = "Room 4";
+                break;
+
+                case 5:
+                    description = "Room 5";
+                break;
+            }
+
+            return description;
         }
         
     }
