@@ -17,43 +17,53 @@ namespace DungeonCrawler.MVC
         public string FilePath{ get;}
         public string R_iD{get;}
 
+        public static List<Room> RoomList = new List<Room>();
+
         public Room(string filePath, string r_iD)
         {
             FilePath = filePath;
             R_iD = r_iD;
 
 
-            R_name = r_name;
-            R_des = r_des;
-            R_items = r_items;
-            R_enemyCount = r_enemyCount;
-            R_enemies = r_enemies;
-            R_potions = r_potions;
+            R_name = _name;
+            R_des = _des;
+            R_items = _items;
+            R_enemyCount = _enemyCount;
+            R_enemies = _enemies;
+            R_potions = _potions;
+            R_doors = _doors;
+            RoomList.Add(this);    
             //Room_entities = room_entities;
+            FileParser();
+            EntityPopulator();
         }
 
-        public string r_name;
+        public string _name;
         public string R_name;
 
-        public string r_des;
+        public string _des;
         public string R_des;
 
         private string r_item_string;
-        public string[] r_items;
+        public string[] _items;
         public string[] R_items;
         public List<HealthPotion> R_potions = new List<HealthPotion>();
-        public List<HealthPotion> r_potions= new List<HealthPotion>();
+        public List<HealthPotion> _potions= new List<HealthPotion>();
 
-        private string r_enemyCount_string;
-        public string[] r_enemyCount;
+        private string _enemyCount_string;
+        public string[] _enemyCount;
         public string[] R_enemyCount;
         public List<Enemy> R_enemies = new List<Enemy>();
-        public List<Enemy> r_enemies= new List<Enemy>();
+        public List<Enemy> _enemies= new List<Enemy>();
+
+        public string _doors_string;
+        public string[] _doors;
+        public string[] R_doors;
 
         /*public List<object> Room_entities = new List<object>();
         public List<object> room_entities= new List<object>();*/
 
-      
+
         
 
         /// <summary>
@@ -62,72 +72,76 @@ namespace DungeonCrawler.MVC
         /// <param name="r_iD">Room ID (should come from map array)</param>
         public void FileParser()
         {
-            r_name = R_iD;
+            _name = R_iD;
           
                 
             //Logic to dissect the text, can be put in a different method that uses the room name as parameter?
             foreach(string line in File.ReadLines(FilePath))
             {
-                /*if (line.Contains("R_N"))
-                {
-                    r_name = line.Replace("R_N:", "");
-                }*/
                 if (line.Contains(R_iD) && line.Contains("R_Des"))
                 {
-                    r_des = line.Replace(R_iD+"_R_Des:", "");
+                    _des = line.Replace(R_iD+"_R_Des:", "");
                 }
                 if (line.Contains(R_iD) && line.Contains("R_Itm"))
                 {
-                    //Console.WriteLine(line);
                     r_item_string = line.Replace(R_iD+"_R_Itm:", "");
-                    r_items = r_item_string.Split('_');
-                    //Console.WriteLine(r_item_string);
-
+                    _items = r_item_string.Split('_');
                 }
-                //this is buggy
                 if (line.Contains(R_iD) && line.Contains("R_E:"))
                 {
-                    r_enemyCount_string = line.Replace(R_iD+"_R_E:", "");
-                    r_enemyCount = r_enemyCount_string.Split('_');
+                    _enemyCount_string = line.Replace(R_iD+"_R_E:", "");
+                    _enemyCount = _enemyCount_string.Split('_');
                 }
-                
+                if (line.Contains(R_iD) && line.Contains("R_D"))
+                {
+                    r_item_string = line.Replace(R_iD+"_R_D:", "");
+                    _items = r_item_string.Split('_');
+                }      
             }
             
         }
 
-        //not working
+        /// <summary>
+        /// Populates 2 list that contain the room instance entities (Items Enemies)
+        /// </summary>
         public void EntityPopulator()
         {
-           if (r_items == null)
+           if (_items == null)
            {
             Console.WriteLine("Items array is null. Make sure to call FileParser first.");
             return;
            }
            else
            {
-            foreach(string i in r_items)
+            foreach(string i in _items)
             {
                 HealthPotion potion = new HealthPotion();
-                r_potions.Add(potion);
+                _potions.Add(potion);
             }
            }
            
-           if (r_enemyCount == null)
+           if (_enemyCount == null)
            {
             Console.WriteLine("Enemy array is null. Make sure to call FileParser first.");
             return;
            }
            else
            {
-                foreach(string i in r_enemyCount)
+                foreach(string i in _enemyCount)
                 {
                     Enemy enemy = new Enemy(i);
-                    r_enemies.Add(enemy);
+                    _enemies.Add(enemy);
                 }
            }
 
            
         } 
+
+        public string DoorChecker(string door)
+        {
+            //if ()
+            return door;
+        }
 
         //unecessary (possibly)
         public void CreateFile(string FilePath)

@@ -12,6 +12,7 @@ namespace DungeonCrawler
         {
             Console.WriteLine("Hello, World!");
             
+            
             //Map test code
            /* Map map= new Map(6, 6);
 
@@ -46,7 +47,7 @@ namespace DungeonCrawler
             string FilePath = Path.Combine(projectDirectory, fileName);
             Console.WriteLine(FilePath);
 
-            Room room = new Room(FilePath,"C2");
+            Room room = new Room(FilePath,"A1");
             
             
             if (!File.Exists(FilePath) || new FileInfo(FilePath).Length == 0)
@@ -54,23 +55,37 @@ namespace DungeonCrawler
                 room.CreateFile(FilePath);
             }
 
-
+            //room test code
+            /*
             room.FileParser();
             room.EntityPopulator();
 
-            Console.WriteLine($"{room.r_name}");
-            Console.WriteLine(room.r_des);
-            foreach(string i in room.r_items)
+           
+            Console.WriteLine($"{room._name}");
+            Console.WriteLine(room._des);
+            foreach(string i in room._items)
             {
                 Console.WriteLine(i);
             }
-            foreach(string i in room.r_enemyCount)
+            foreach(string i in room._enemyCount)
             {
                 Console.WriteLine(i);
             }
 
-            Console.WriteLine(room.r_potions.Count);
-            
+            Console.WriteLine(room._potions.Count);
+            Console.WriteLine(room._enemies.Count);
+            */
+            /*Room B2 = new Room(FilePath,"B2");
+            Room C2 = new Room(FilePath,"C2");
+
+            Console.WriteLine(Room.RoomList.Count);
+            Console.WriteLine("\n"+room._potions.Count);
+            Console.WriteLine(room._enemies.Count);
+            Console.WriteLine("\n"+B2._potions.Count);
+            Console.WriteLine(B2._enemies.Count);
+            Console.WriteLine("\n"+C2._potions.Count);
+            Console.WriteLine(C2._enemies.Count);*/
+
             
 
        }
