@@ -24,6 +24,16 @@ namespace DungeonCrawler.MVC
 
             map_s = new Room[mapX, mapY];
 
+            string[,] room = new string[mapX, mapY];
+
+            //Fill the map
+            for (int i = 0; i < 6 ; i++)
+            {
+                for (int j = 0 ; j < 6 ; j++)
+                {
+                    room[i , j] = $"{(char)('A' + j)}{i + 1}";
+                }
+            }
         }
         
         /// <summary>
