@@ -1,3 +1,4 @@
+using DungeonCrawler.Characters;
 using DungeonCrawler.Items;
 using DungeonCrawler.MVC;
 using System;
@@ -93,9 +94,26 @@ namespace DungeonCrawler
                 }
             }
 
+            char directionChoice;
+            string inputString;
             Console.WriteLine("N - North \nS - South \nE - East \nW - West");
             Console.Write("\nPlease choose which direction you want to go:");
-            return Convert.ToChar(Console.ReadLine());
+            inputString = Console.ReadLine();
+
+            if (char.TryParse(inputString, out directionChoice))
+            {
+                return Convert.ToChar(inputString);
+            }
+            else
+            {
+                Console.WriteLine("That is not a correct direction");
+                return 'Q';
+            }
+        }
+
+        public void EnemyDeath(Enemy enemy)
+        {
+            Console.WriteLine($"{enemy.Name} was killed! \n");
         }
 
         public void MoveOptions(char option)
