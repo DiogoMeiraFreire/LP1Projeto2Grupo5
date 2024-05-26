@@ -69,9 +69,10 @@ namespace DungeonCrawler
             return Convert.ToInt32(Console.ReadLine());
         }
 
-        private string RoomDescription(Map map, string roomName, bool b)
+        public string RoomDescription(Map map, string roomName, bool b)
         {
-            (b, roomName) = map.CurrentRoom();
+            int throaway1, throwaway2;
+            (b, throaway1, throwaway2, roomName) = map.CurrentRoom();
 
             Console.WriteLine(roomName);
             foreach (Room room in map.map_room)
@@ -87,7 +88,7 @@ namespace DungeonCrawler
             return Console.ReadLine();
         }
 
-        private void MoveOptions(char option)
+        public void MoveOptions(char option)
         {
             switch (option)
             {
@@ -102,6 +103,9 @@ namespace DungeonCrawler
                     break;
                 case 'W':
                     Console.WriteLine("You moved West");
+                    break;
+                case 'L':
+                    Console.WriteLine("You walk into a wall");
                     break;
             }
         }

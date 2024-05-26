@@ -117,7 +117,7 @@ namespace DungeonCrawler
                 }
             }
             
-            model.Move('E');
+            model.Move('N');
             Console.WriteLine("\n");
 
             for (int i = 0; i < model.map.MapX ; i++)
