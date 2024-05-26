@@ -1,4 +1,5 @@
 using System;
+using DungeonCrawler.Characters;
 
 namespace DungeonCrawler.Items
 {

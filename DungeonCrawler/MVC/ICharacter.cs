@@ -22,14 +22,7 @@ namespace DungeonCrawler
         /// </summary>
         /// <param name="target"> the target to attack </param>
         void Attack(ICharacter target);
-
-        /// <summary>
-        /// Heal action with an amount variable
-        /// </summary>
-        /// <param name="potion"> a potion that defines how much is healed </param>
-        public abstract void Heal(int index);
       
-
         /// <summary>
         /// Removing health points (also known as taking damage)
         /// </summary>

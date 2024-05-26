@@ -1,3 +1,5 @@
+using DungeonCrawler.Characters;
+
 namespace DungeonCrawler
 {
     public class Model

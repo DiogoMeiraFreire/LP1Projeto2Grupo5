@@ -1,9 +1,8 @@
 ﻿using System;
-using DungeonCrawler.Items;
 using DungeonCrawler.MVC;
 using System.IO;
-using System.Security.Principal;
-using System.Linq;
+using DungeonCrawler.Characters;
+
 
 namespace DungeonCrawler
 {

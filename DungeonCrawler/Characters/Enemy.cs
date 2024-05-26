@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using DungeonCrawler.Items;
 using DungeonCrawler.MVC;
 
-namespace DungeonCrawler
+namespace DungeonCrawler.Characters
 {
     public class Enemy : ICharacter
     {
@@ -45,12 +45,6 @@ namespace DungeonCrawler
         {
             room.ge;
         }*/
-
-        //como nao ter de herdar isto      
-        public void Heal( int index)
-        {
-            throw new NotImplementedException();
-        }
 
         /// <summary>
         /// Removing health points (also known as taking damage) 

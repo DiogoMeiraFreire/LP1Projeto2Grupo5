@@ -17,12 +17,12 @@ namespace DungeonCrawler.MVC
         /// </summary>
         /// <param name="mapY">Rows</param>
         /// <param name="mapX">Columns</param>
-        public Map(int mapY, int mapX)
+        public Map(int mapX, int mapY)
         {
             MapY = mapY;
             MapX = mapX;
 
-            map_s = new Room[mapY,mapX];
+            map_s = new Room[mapX, mapY];
 
         }
         

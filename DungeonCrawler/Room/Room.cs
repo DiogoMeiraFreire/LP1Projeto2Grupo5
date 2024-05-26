@@ -1,13 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.IO;
-using System.Runtime.CompilerServices;
 using DungeonCrawler.Items;
-using System.Security.Cryptography.X509Certificates;
-using System.Data;
-using System.Dynamic;
+using DungeonCrawler.Characters;
 
 namespace DungeonCrawler.MVC
 {
@@ -26,7 +21,6 @@ namespace DungeonCrawler.MVC
             FilePath = filePath;
             R_iD = r_iD;
 
-            R_des = _des;
             R_items = _items;
             R_enemyCount = _enemyCount;
             R_doors = _doors;
@@ -38,7 +32,6 @@ namespace DungeonCrawler.MVC
 
         public string _name;
         public string _des;
-        private string R_des;
         private string r_item_string;
         public string[] _items;
         private string[] R_items;
@@ -67,7 +60,7 @@ namespace DungeonCrawler.MVC
             {
                 if (line.Contains(R_iD) && line.Contains("R_Des"))
                 {
-                    R_des = line.Replace(R_iD+"_R_Des:", "");
+                    _des = line.Replace(R_iD+"_R_Des:", "");
                 }
                 if (line.Contains(R_iD) && line.Contains("R_Itm"))
                 {
