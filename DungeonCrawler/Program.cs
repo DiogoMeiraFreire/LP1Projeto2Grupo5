@@ -32,7 +32,7 @@ namespace DungeonCrawler
             Console.WriteLine($"{player.Health}")*/
 
 
-            string fileName = @"testDesc.txt";
+            string fileName = @"RoomDescriptions.txt";
 
             // Get the directory and remove a part of if to avoid conflicts
             string projectDirectory = Directory.GetCurrentDirectory();

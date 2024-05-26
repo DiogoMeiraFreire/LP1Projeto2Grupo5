@@ -26,45 +26,30 @@ namespace DungeonCrawler.MVC
             FilePath = filePath;
             R_iD = r_iD;
 
-
-            R_name = _name;
             R_des = _des;
             R_items = _items;
             R_enemyCount = _enemyCount;
-            R_enemies = _enemies;
-            R_potions = _potions;
             R_doors = _doors;
             RoomList.Add(this.R_iD);    
-            //Room_entities = room_entities;
 
             FileParser();
             EntityPopulator();
         }
 
         public string _name;
-        public string R_name;
-
         public string _des;
-        public string R_des;
-
+        private string R_des;
         private string r_item_string;
         public string[] _items;
-        public string[] R_items;
-        public List<HealthPotion> R_potions = new List<HealthPotion>();
+        private string[] R_items;
         public List<HealthPotion> _potions= new List<HealthPotion>();
-
         private string _enemyCount_string;
         public string[] _enemyCount;
-        public string[] R_enemyCount;
-        public List<Enemy> R_enemies = new List<Enemy>();
+        private string[] R_enemyCount;
         public List<Enemy> _enemies= new List<Enemy>();
-
         private string _doors_string;
         public string[] _doors;
-        public string[] R_doors;
-
-        /*public List<object> Room_entities = new List<object>();
-        public List<object> room_entities= new List<object>();*/
+        private string[] R_doors;
 
 
         
@@ -82,25 +67,25 @@ namespace DungeonCrawler.MVC
             {
                 if (line.Contains(R_iD) && line.Contains("R_Des"))
                 {
-                    _des = line.Replace(R_iD+"_R_Des:", "");
+                    R_des = line.Replace(R_iD+"_R_Des:", "");
                 }
                 if (line.Contains(R_iD) && line.Contains("R_Itm"))
                 {
                     r_item_string = line.Replace(R_iD+"_R_Itm:", "");
-                    _items = r_item_string.Split('_');
+                    R_items = r_item_string.Split('_');
                 }
                 if (line.Contains(R_iD) && line.Contains("R_E:"))
                 {
                     _enemyCount_string = line.Replace(R_iD+"_R_E:", "");
                     //Console.WriteLine("" + _enemyCount_string);
-                    _enemyCount = _enemyCount_string.Split('_');
+                    R_enemyCount = _enemyCount_string.Split('_');
                     //Console.WriteLine("" + _enemyCount.Length);
                 }
                 if (line.Contains(R_iD.ToLower()) && line.Contains("R_D"))
                 {
                     _doors_string = line.Replace(R_iD.ToLower()+"_R_D:", "");
                     //Console.WriteLine("\n_doors:"+_doors_string);
-                    _doors = _doors_string.Split('_');
+                    R_doors = _doors_string.Split('_');
                 }      
             }
             
@@ -111,28 +96,28 @@ namespace DungeonCrawler.MVC
         /// </summary>
         public void EntityPopulator()
         {
-           if (_items == null)
+           if (R_items == null)
            {
             Console.WriteLine("Items array is null. Make sure to call FileParser first.");
             return;
            }
            else
            {
-            foreach(string i in _items)
+            foreach(string i in R_items)
             {
                 HealthPotion potion = new HealthPotion();
                 _potions.Add(potion);
             }
            }
            
-           if (_enemyCount == null)
+           if (R_enemyCount == null)
            {
             Console.WriteLine("Enemy array is null. Make sure to call FileParser first.");
             return;
            }
            else
            {
-                foreach(string i in _enemyCount)
+                foreach(string i in R_enemyCount)
                 {
                     Enemy enemy = new Enemy(i, this);
                     //enemy.
@@ -150,7 +135,7 @@ namespace DungeonCrawler.MVC
         public string DoorChecker(string door)
         {
             bool d_check = false;
-            foreach(string d in _doors)
+            foreach(string d in R_doors)
             {
                 if(d == door){d_check = true;}
             }
@@ -165,7 +150,7 @@ namespace DungeonCrawler.MVC
             return ret;
         }
 
-        //unecessary (possibly)
+        //unecessary (possibly) or a safeguard in case file is deleted
         public void CreateFile(string FilePath)
         {            
             //StreamWriter as the AppendText for easier understanding
