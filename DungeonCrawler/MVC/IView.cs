@@ -22,14 +22,6 @@ namespace DungeonCrawler
         /// <param name="inventory"> a list of the inventory items </param>
         int ShowInventory(List<Item> inventory);
 
-        string ReadInput();
-
-        /// <summary>
-        /// Used to wait for a key to be pressed
-        /// </summary>
-        void WaitForKey();
-
-
         /// <summary>
         /// Displays the final message
         /// </summary>

@@ -7,12 +7,12 @@ namespace DungeonCrawler.Items
     {
         Random random = new Random();
         public override string Name => throw new NotImplementedException();
-        private Player player;
+        //private Player player;
 
         public override void Use()
         {
             int healing_amount = random.Next(0,25);
-            player.Heal(healing_amount);
+            //player.Heal(healing_amount);
         }
 
         public override void Interact()
