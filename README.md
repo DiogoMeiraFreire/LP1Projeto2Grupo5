@@ -61,7 +61,7 @@ Após ter a geração do nível feito, o que faltava era popular o mapa. O Playe
 Tudo isto foi feito em conta o sistema MVC, mantendo a lógica no Model, a informação dada e recebida do jogador no View e a interpretação dos inputs e game loop no Controller.
 
 ## Diagrama UML
-'''mermaid
+```mermaid
 
 classDiagram
 
@@ -95,7 +95,7 @@ classDiagram
 
     class IView
     <<interface>>   IView 
-'''
+```
 
 # Referências
 - [1]  Whitaker, R. B. (2022). **The C# Player's Guide** (5th Edition). Starbound Software.
