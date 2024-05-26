@@ -57,6 +57,7 @@ namespace DungeonCrawler.Characters
             Health -= amount;
             if (Health <= 0)
             {
+                
                 E_room._enemies.Clear();
             }   
         }

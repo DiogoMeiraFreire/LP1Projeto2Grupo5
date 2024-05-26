@@ -40,14 +40,12 @@ namespace DungeonCrawler
                     if( map.map_room[i,j]._enemies.Count > 0 )
                     {
                     Enemy target =map.map_room[i, j]._enemies[0];
-                    //Console.WriteLine(target.Health);
+                    
                     player.Attack(target);
-                    Console.WriteLine(target.Name+", health:"+target.Health);
-                    Console.WriteLine("\n");
+                    model.DamageNumb(player, map);
                     target.Attack(player);
-                    Console.WriteLine("Player, health:"+player.Health);
-                    Console.WriteLine("\n");
-
+                    model.DamageNumb(player, map);
+                    
                     
                     MenuLogic();
                     }
