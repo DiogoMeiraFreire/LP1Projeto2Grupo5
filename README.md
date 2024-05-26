@@ -6,7 +6,7 @@ Yet Another Dungeon Crawler é um jogo para um jogador, feito em C# 8.0 e compat
 ## Objetivo
 O objetivo final do jogador é chegar ao fim da masmorra vivo e fugir da mesma. Pelo caminho o mesmo terá de explorar diferentes quartos, descobrir itens e enfrentar inimigos.
 
-![Map Layout and Description of icons](https://cdn.discordapp.com/attachments/1243543551271374908/1244199313274306580/Map.png?ex=66543e68&is=6652ece8&hm=30cadcb2f9a197ad45bbc87d7d2ea10c6586db7a2399f1570c9fa19a0183e6d4&)
+![Map Layout and Description of icons](https://cdn.discordapp.com/attachments/1243543551271374908/1244260121211703369/Map_1.png?ex=6654770a&is=6653258a&hm=2446fc60077dd938d3b4b173dae458cd65b53dad5773c67cb7763ef4bc13aff9&)
 
 ## Regras do Jogo
 O jogador pode: 
