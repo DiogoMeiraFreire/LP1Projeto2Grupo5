@@ -29,7 +29,10 @@ namespace DungeonCrawler.Characters
                 {  
                     
                 }
-
+                if (_health > 100)
+                {
+                    value = 100;
+                }
                 _health = value;
             }          
         }
@@ -42,10 +45,10 @@ namespace DungeonCrawler.Characters
         public Player(string name = "Player")
         {
             Name            = name;
-            Health            = 100;
+            Health          = 100;
         }
 
-         /// <summary>
+        /// <summary>
         /// AttackPower property
         /// </summary>
         public int AttackPower { get ; set; }
@@ -113,7 +116,5 @@ namespace DungeonCrawler.Characters
                 return;
             }
         }
-
-
     }
 }
