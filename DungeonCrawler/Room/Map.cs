@@ -51,7 +51,7 @@ namespace DungeonCrawler.MVC
                 for (int j = 0 ; j < MapY ; j++)
                 {
                     map_2[i , j] = $"{(char)('A' + j)}{i + 1}";
-                    Room room = new Room(,map_2[i,j]);
+                    Room room = new Room(GetFile(),map_2[i,j]);
                     map_1[i,j] = room;
                 }
             }
@@ -137,11 +137,13 @@ namespace DungeonCrawler.MVC
             if(index >= 0)
             {
                 projectDirectory = projectDirectory.Remove(index,stringToRemove.Length);
-                return projectDirectory;
+                string FilePath = Path.Combine(projectDirectory, fileName);
+                return FilePath;
             }
             else
             {
-                return projectDirectory;
+                string FilePath = Path.Combine(projectDirectory, fileName);
+                return FilePath;
             }
         }
     }

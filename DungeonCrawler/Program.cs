@@ -91,9 +91,13 @@ namespace DungeonCrawler
 
             Map map= new Map(6,6);
 
-            foreach(string s in map.map_2)
+            /*foreach(string s in map.map_2)
             {
                 Console.WriteLine(s);
+            }*/
+            foreach(Room r in map.map_1)
+            {
+                Console.WriteLine(r._name);
             }
 
 
