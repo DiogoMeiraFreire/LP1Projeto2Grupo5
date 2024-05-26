@@ -11,8 +11,8 @@ O objetivo final do jogador é chegar ao fim da masmorra vivo e fugir da mesma. 
 ## Regras do Jogo
 O jogador pode: 
 [Attack] - Atacar o inimigo; 
-[Go] - Mover-se numa direção; 
-[Pick Up] - Apanhar itens; 
+[Move] - Mover-se numa direção; 
+[Pick_Up] - Apanhar itens; 
 [Use] - Usar itens que ele tenha no inventário; 
 [Iventory] - Aceder o seu inventário; 
 [Health] - Ver a sua vida. 
