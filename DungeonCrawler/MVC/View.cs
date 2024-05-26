@@ -148,11 +148,10 @@ namespace DungeonCrawler
                     break;
                 case 'B':
                     Console.WriteLine("You can't move the enemy is right in front of you!");
-                break;
+                    break;
                 default:
                     Console.WriteLine("Please input a valid cardinal direction..");
                 break;
-                
             }
         }
 
@@ -165,6 +164,7 @@ namespace DungeonCrawler
         public void WinMessage()
         {
             Console.WriteLine("You win!");
+            Environment.Exit(0);
         }
 
         public void NoEnemies()

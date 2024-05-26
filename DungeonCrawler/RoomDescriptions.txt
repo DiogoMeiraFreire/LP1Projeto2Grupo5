@@ -36,8 +36,8 @@ f1_R_D:E1_F2
 
 R_N:A2
 A2_R_Des:"As you open the door you feel a bit of warmth coming from somewhere, you quickly determine that it must be the smelter thats in one of the walls of this brick room. As you examine the room further, this seems like a smithy where metal is forged and usually where weapons and armor is made. You seem some tools on top of a table but the wooden handlebar are rotten, making the tools unusable. You decide to examine the smelter that you thought was the source of the heat in this room, at first sight nothing seems to be active and there are no flames but as soon as you attempt to grab a piece of coal, you get slightly burnt, indicating that while the smelter is not active now, it hanst been long since it was used, leaving you to wonder if you really are alone in this dungeon..."
-A2_R_Itm:
-A2_R_E:Skeleton
+A2_R_Itm:Potion
+A2_R_E:
 a2_R_D:A1_B2
 
 R_N:B2
@@ -122,7 +122,7 @@ R_N:C4
 C4_R_Des:"As you enter this room, you see some things that are unusual for a dungeon room, a bed, a table and a chair and a closet. This feels like a bedroom but the state of everything, is leaves you to think that it has been a while since it was used, the bed frame is destroyed, the table is empty, the chair is missing a leg and when opening the closet, all the clothes that were once there are unrecognizable, full of holes, probably eaten by bugs. Whoever lived here is long gone, the only question left is if they manage to leave or died trying..."
 C4_R_Itm:
 C4_R_E:
-C4_R_D:A4_D4
+C4_R_D:B4_D4
 
 R_N:D4
 D4_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room made of stone walls, dosnt have much to contemplate. The small gust of wind you feel leaves you with hope of an outside but unable to determine from where the gust is coming, there is nothing left to do in this room."

@@ -14,20 +14,6 @@ namespace DungeonCrawler
         View view = model.view;
         public void MenuLogic()
         {
-            //view.Welcome();
-            //view.WaitForKey();
-            //(bool bb, int ii, int jj, string rroom_name ) = map.CurrentRoom();
-            //Console.WriteLine(map.map_room[ii,jj]._enemies[0].Name);
-           // Console.WriteLine(map.map_room[ii,jj]._potions.Count);
-            //Console.WriteLine(map.map_room[ii,jj]._name);
-            /* int e_count = 0;
-            foreach(Room r in map.map_room)
-            {
-              e_count += r._enemies.Count;
-            }
-            Console.WriteLine(e_count);
-         */
-
             switch(view.ShowMenu())
             {
                 case 1:

@@ -1,5 +1,3 @@
-using System;
-using System.ComponentModel.Design;
 using DungeonCrawler.Characters;
 using DungeonCrawler.MVC;
 
@@ -9,10 +7,6 @@ namespace DungeonCrawler
     public class Model
     {
         public Map map = new Map(6,6);
-        //private Player  player;
-
-        //public Player   Player => player;
-
         public Player player = new Player("Jeremy");
         public View view = new View();
 
@@ -71,13 +65,13 @@ namespace DungeonCrawler
             if (room._enemies.Count != 0)
             {
                 view.MoveOptions('B');
-                view.WinMessage();
             }
             else
             {
                 if(room_name == "B6")
                 {
                     //win message
+                    view.WinMessage();
                     Environment.Exit(0);
                 }
                 switch (direction)

@@ -83,9 +83,9 @@ namespace DungeonCrawler.MVC
             
             string room_name = "";
 
-            for (int i = 0; i < MapY ; i++)
+            for (int i = 0; i < MapX ; i++)
             {
-                for (int j = 0 ; j < MapX ; j++)
+                for (int j = 0 ; j < MapY ; j++)
                 {
                     if(map_player[i,j] == true)
                     { 
