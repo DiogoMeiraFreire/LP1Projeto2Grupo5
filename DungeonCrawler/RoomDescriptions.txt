@@ -1,0 +1,396 @@
+R_N:A1
+A1_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+A1_R_Itm:
+A1_R_E:
+a1_R_D:A2_B1
+
+R_N:B1
+B1_R_Des:"As soon as you enter this room, you start feeling a bit claustrophobic, 
+the shelves filled with books form these corridors around the room but 
+everything is so compacted that its hard for even one person to walk 
+through these corridors.
+As you walk around, the floor boards made with wooden tiles creak 
+on each step but surprisingly enough everything is tidy and the books
+are well-preserved. Apart from the cobwebs on the ceiling and the
+dust accumulating on top of the books, it hardly feels like this place
+was abandoned."
+B1_R_Itm:Potion
+B1_R_E:
+b1_R_D:A1_B2_C1
+
+R_N:C1
+C1_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+C1_R_Itm:Potion
+C1_R_E:Skeleton
+c1_R_D:B1_D1
+
+R_N:D1
+D1_R_Des:"While opening the door, you see what it seems like a black brick room,
+adorned with tools and weapons racks, tables with different materials
+and a pile of boxes in a corner.
+As you inspect the room further, you come to realize that there is nothing
+of use, the weapons stored in the racks are so degraded that you feel like
+a swing would destroy these weapons beyond repair, on the tables are nothing
+but rocks and in the boxes comes a rotten smell, as you open one box you determine
+impossible to discover whatever was in there, as it was so rotten beyond identification."
+D1_R_Itm:
+D1_R_E:
+d1_R_D:C1_D2_E1
+
+R_N:E1
+E1_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+E1_R_Itm:
+E1_R_E:Giant Rat
+e1_R_D:D1_E2_F1
+
+R_N:F1
+F1_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+F1_R_Itm:Potion
+F1_R_E:Slime
+f1_R_D:E1_F2
+
+R_N:A2
+A2_R_Des:"As you open the door you feel a bit of warmth coming from somewhere, you quickly
+determine that it must be the smelter thats in one of the walls of this brick room.
+As you examine the room further, this seems like a smithy where metal is forged and
+usually where weapons and armor is made. You seem some tools on top of a table but the
+wooden handlebar are rotten, making the tools unusable.
+You decide to examine the smelter that you thought was the source of the heat in this
+room, at first sight nothing seems to be active and there are no flames but as soon
+as you attempt to grab a piece of coal, you get slightly burnt, indicating that while
+the smelter is not active now, it hanst been long since it was used, leaving you to
+wonder if you really are alone in this dungeon..."
+A2_R_Itm:
+A2_R_E:Skeleton
+a2_R_D:A1_B2
+
+R_N:B2
+B2_R_Des:"As soon as you enter this room, you start feeling a bit claustrophobic, 
+the shelves filled with books form these corridors around the room but 
+everything is so compacted that its hard for even one person to walk 
+through these corridors.
+As you walk around, the floor boards made with wooden tiles creak 
+on each step but surprisingly enough everything is tidy and the books
+are well-preserved. Apart from the cobwebs on the ceiling and the
+dust accumulating on top of the books, it hardly feels like this place
+was abandoned."
+B2_R_Itm:
+B2_R_E:
+b2_R_D:A2_B1_B3_C2
+
+R_N:C2
+C2_R_Des:"As you open the door you feel a bit of warmth coming from somewhere, you quickly
+determine that it must be the smelter thats in one of the walls of this brick room.
+As you examine the room further, this seems like a smithy where metal is forged and
+usually where weapons and armor is made. You seem some tools on top of a table but the
+wooden handlebar are rotten, making the tools unusable.
+You decide to examine the smelter that you thought was the source of the heat in this
+room, at first sight nothing seems to be active and there are no flames but as soon
+as you attempt to grab a piece of coal, you get slightly burnt, indicating that while
+the smelter is not active now, it hanst been long since it was used, leaving you to
+wonder if you really are alone in this dungeon..."
+C2_R_Itm:
+C2_R_E:Skeleton
+c2_R_D:B2_C3_D2
+
+R_N:D2
+D2_R_Des:"This room made of stone bricks, void of anything, fills you with a sense of dread,
+the only bright point in this room is the only light source present in it. A ray of
+sunshine hits the middle of the room, illuminating the whole space, reminding you that
+there is an outside and you are fighting to get there."
+D2_R_Itm:
+D2_R_E:
+d2_R_D:C2_D1_D3_E2
+
+R_N:E2
+E2_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+E2_R_Itm:
+E2_R_E:Skeleton
+e2_R_D:B2_C3_D2
+
+R_N:F2
+F2_R_Des:"While opening the door, you see what it seems like a black brick room,
+adorned with tools and weapons racks, tables with different materials
+and a pile of boxes in a corner.
+As you inspect the room further, you come to realize that there is nothing
+of use, the weapons stored in the racks are so degraded that you feel like
+a swing would destroy these weapons beyond repair, on the tables are nothing
+but rocks and in the boxes comes a rotten smell, as you open one box you determine
+impossible to discover whatever was in there, as it was so rotten beyond identification."
+F2_R_Itm:Potion
+F2_R_E:
+f2_R_D:E2_F1_F3
+
+R_N:A3
+A3_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+A3_R_Itm:
+A3_R_E:Giant Rat
+a3_R_D:A4
+
+R_N:B3
+B3_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+B3_R_Itm:Potion
+B3_R_E:
+b3_R_D:B2_B4_C3
+
+R_N:C3
+C3_R_Des:"As soon as you enter this room, you start feeling a bit claustrophobic, 
+the shelves filled with books form these corridors around the room but 
+everything is so compacted that its hard for even one person to walk 
+through these corridors.
+As you walk around, the floor boards made with wooden tiles creak 
+on each step but surprisingly enough everything is tidy and the books
+are well-preserved. Apart from the cobwebs on the ceiling and the
+dust accumulating on top of the books, it hardly feels like this place
+was abandoned."
+C3_R_Itm:
+C3_R_E:
+c3_R_D:B3_C2_D3
+
+R_N:D3
+D3_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+D3_R_Itm:Potion
+D3_R_E:Slime
+d3_R_D:C3_D2_E3
+
+R_N:E3
+E3_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+E3_R_Itm:
+E3_R_E:
+e3_R_D:D3_E4_F3
+
+R_N:F3
+F3_R_Des:"While opening the door, you see what it seems like a black brick room,
+adorned with tools and weapons racks, tables with different materials
+and a pile of boxes in a corner.
+As you inspect the room further, you come to realize that there is nothing
+of use, the weapons stored in the racks are so degraded that you feel like
+a swing would destroy these weapons beyond repair, on the tables are nothing
+but rocks and in the boxes comes a rotten smell, as you open one box you determine
+impossible to discover whatever was in there, as it was so rotten beyond identification."
+F3_R_Itm:
+F3_R_E:Skeleton
+f3_R_D:E3_F2_F4
+
+R_N:A4
+A4_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+A4_R_Itm:
+A4_R_E:
+a4_R_D:A3_A5_B4
+
+R_N:B4
+B4_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+B4_R_Itm:
+B4_R_E:Skeleton
+b4_R_D:A4_B3_C4
+
+R_N:C4
+C4_R_Des:"As you enter this room, you see some things that are unusual for a dungeon room,
+a bed, a table and a chair and a closet. This feels like a bedroom but the state
+of everything, is leaves you to think that it has been a while since it was used,
+the bed frame is destroyed, the table is empty, the chair is missing a leg and
+when opening the closet, all the clothes that were once there are unrecognizable,
+full of holes, probably eaten by bugs.
+Whoever lived here is long gone, the only question left is if they manage to leave
+or died trying..."
+C4_R_Itm:
+C4_R_E:
+C4_R_D:A4_D4
+
+R_N:D4
+D4_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+D4_R_Itm:Potion
+D4_R_E:
+d4_R_D:C4_D5_E4
+
+R_N:E4
+E4_R_Des:"While opening the door, you see what it seems like a black brick room,
+adorned with tools and weapons racks, tables with different materials
+and a pile of boxes in a corner.
+As you inspect the room further, you come to realize that there is nothing
+of use, the weapons stored in the racks are so degraded that you feel like
+a swing would destroy these weapons beyond repair, on the tables are nothing
+but rocks and in the boxes comes a rotten smell, as you open one box you determine
+impossible to discover whatever was in there, as it was so rotten beyond identification."
+E4_R_Itm:
+E4_R_E:Slime
+e4_R_D:D4_E3_E5_F4
+
+R_N:F4
+F4_R_Des:"As soon as you enter this room, you start feeling a bit claustrophobic, 
+the shelves filled with books form these corridors around the room but 
+everything is so compacted that its hard for even one person to walk 
+through these corridors.
+As you walk around, the floor boards made with wooden tiles creak 
+on each step but surprisingly enough everything is tidy and the books
+are well-preserved. Apart from the cobwebs on the ceiling and the
+dust accumulating on top of the books, it hardly feels like this place
+was abandoned."
+F4_R_Itm:
+F4_R_E:
+f4_R_D:E4_F3_F5
+
+R_N:A5
+A5_R_Des:"As you open the door you feel a bit of warmth coming from somewhere, you quickly
+determine that it must be the smelter thats in one of the walls of this brick room.
+As you examine the room further, this seems like a smithy where metal is forged and
+usually where weapons and armor is made. You seem some tools on top of a table but the
+wooden handlebar are rotten, making the tools unusable.
+You decide to examine the smelter that you thought was the source of the heat in this
+room, at first sight nothing seems to be active and there are no flames but as soon
+as you attempt to grab a piece of coal, you get slightly burnt, indicating that while
+the smelter is not active now, it hanst been long since it was used, leaving you to
+wonder if you really are alone in this dungeon..."
+A5_R_Itm:Potion
+A5_R_E:
+A5_R_D:A4_A6_B5
+
+R_N:B5
+B5_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+B5_R_Itm:
+B5_R_E:Skeleton
+b5_R_D:A5_B6_C5
+
+R_N:C5
+C5_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+C5_R_Itm:
+C5_R_E:
+c5_R_D:B5_C6_D5
+
+R_N:D5
+D5_R_Des:"While opening the door, you see what it seems like a black brick room,
+adorned with tools and weapons racks, tables with different materials
+and a pile of boxes in a corner.
+As you inspect the room further, you come to realize that there is nothing
+of use, the weapons stored in the racks are so degraded that you feel like
+a swing would destroy these weapons beyond repair, on the tables are nothing
+but rocks and in the boxes comes a rotten smell, as you open one box you determine
+impossible to discover whatever was in there, as it was so rotten beyond identification."
+D5_R_Itm:
+D5_R_E:Giant Rat
+d5_R_D:C5_D4_E5
+
+R_N:E5
+E5_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+E5_R_Itm:Key
+E5_R_E:
+e5_R_D:D5_E4_E6_F5
+
+R_N:F5
+F5_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+F5_R_Itm:Potion
+F5_R_E:Slime
+f5_R_D:E5_F4
+
+R_N:A6
+A6_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+A6_R_Itm:
+A6_R_E:Skeleton
+a6_R_D:A5_B6
+
+R_N:B6
+B6_R_Des:"When you enter this room you dont see nothing standing out immediately but upon
+closer inspection, one of the doors seem different from all those you have seen along
+the way. The door to the south appears locked, requiring a key to open and second, its 
+much more sturdy than the previous doors, no matter what you do it dosnt seem to break."
+B6_R_Itm:
+B6_R_E:
+b6_R_D:A6_B5
+
+R_N:C6
+C6_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+C6_R_Itm:
+C6_R_E:Skeleton
+c6_R_D:C5_D6
+
+R_N:D6
+D6_R_Des:"As you open the door you feel a bit of warmth coming from somewhere, you quickly
+determine that it must be the smelter thats in one of the walls of this brick room.
+As you examine the room further, this seems like a smithy where metal is forged and
+usually where weapons and armor is made. You seem some tools on top of a table but the
+wooden handlebar are rotten, making the tools unusable.
+You decide to examine the smelter that you thought was the source of the heat in this
+room, at first sight nothing seems to be active and there are no flames but as soon
+as you attempt to grab a piece of coal, you get slightly burnt, indicating that while
+the smelter is not active now, it hanst been long since it was used, leaving you to
+wonder if you really are alone in this dungeon..."
+D6_R_Itm:Potion
+D6_R_E:
+d6_R_D:C6_E6
+
+R_N:E6
+E6_R_Des:"As soon as you enter this room, you start feeling a bit claustrophobic, 
+the shelves filled with books form these corridors around the room but 
+everything is so compacted that its hard for even one person to walk 
+through these corridors.
+As you walk around, the floor boards made with wooden tiles creak 
+on each step but surprisingly enough everything is tidy and the books
+are well-preserved. Apart from the cobwebs on the ceiling and the
+dust accumulating on top of the books, it hardly feels like this place
+was abandoned."
+E6_R_Itm:
+E6_R_E:
+e6_R_D:D6_E5_F6
+
+R_N:F6
+F6_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room 
+made of stone walls, dosnt have much to contemplate. The small gust of 
+wind you feel leaves you with hope of an outside but unable to determine 
+from where the gust is coming, there is nothing left to do in this room."
+F6_R_Itm:
+F6_R_E:Slime
+f6_R_D:E6
