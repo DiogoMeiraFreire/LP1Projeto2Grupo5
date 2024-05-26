@@ -6,14 +6,6 @@ namespace DungeonCrawler
 {
     public class View : IView
     {
-        private readonly Model _model;  
-
-        public View(Model model)
-        {
-            _model  = model;
-
-        }
-
         public void Welcome()
         {
             Console.WriteLine("Welcome to the dungeon!");
