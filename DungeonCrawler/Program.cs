@@ -87,9 +87,15 @@ namespace DungeonCrawler
             //Console.WriteLine(room._enemies.Count);
             //Console.WriteLine(room._enemyCount.Length);*/
 
-            Enemy tmpenemy = room._enemies[0];
 
-            Console.WriteLine(tmpenemy.E_room._name);
+
+            Map map= new Map(6,6);
+
+            foreach(string s in map.map_2)
+            {
+                Console.WriteLine(s);
+            }
+
 
        }
     }

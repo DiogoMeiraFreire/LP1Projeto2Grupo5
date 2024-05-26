@@ -35,18 +35,18 @@ namespace DungeonCrawler
             switch(view.ShowMenu())
             {
                 case 1:
-                    Move();
+                    //Move();
                     break;
                 case 2:
-                    Attack();
+                    //player.Attack(Enemy );
                     break;
 
                 case 3:
-                    ItemInventory();
+                    view.ShowInventory(player.inventory);
                     break;
 
                 case 4:
-                    Menu();
+                    //Menu();
                     break;
 
                 case 0:

@@ -1,16 +1,29 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
 namespace DungeonCrawler.MVC
 {
+
+    
     public class Map
     {
+        string fileName = @"RoomDescriptions.txt";
+
+        // Get the directory and remove a part of if to avoid conflicts
+        static  string projectDirectory = Directory.GetCurrentDirectory();
+        static string stringToRemove = @"\bin\Debug\net6.0";
+        private int index = projectDirectory.IndexOf(stringToRemove);
+       
+       
         public int MapY;
         public int MapX;
 
-        public Room[,] map_s;
+        public Room[,] map_1;
+        public string[,] map_2;
 
         /// <summary>
         /// MapX should be Columns, MapY should be rows
@@ -22,20 +35,30 @@ namespace DungeonCrawler.MVC
             MapY = mapY;
             MapX = mapX;
 
-            map_s = new Room[mapX, mapY];
+            map_1 = new Room[mapX, mapY];
 
-            string[,] room = new string[mapX, mapY];
+            map_2 = new string[mapX, mapY];
 
-            //Fill the map
-            for (int i = 0; i < 6 ; i++)
-            {
-                for (int j = 0 ; j < 6 ; j++)
-                {
-                    room[i , j] = $"{(char)('A' + j)}{i + 1}";
-                }
-            }
+            FillMap();
+
         }
         
+        //j sao colunas i sao rows
+        public void FillMap() 
+        {
+            for (int i = 0; i < MapX ; i++)
+            {
+                for (int j = 0 ; j < MapY ; j++)
+                {
+                    map_2[i , j] = $"{(char)('A' + j)}{i + 1}";
+                    Room room = new Room(,map_2[i,j]);
+                    map_1[i,j] = room;
+                }
+            }
+
+            
+        }
+
         /// <summary>
         /// fills map with A1-F6
         /// </summary>
@@ -107,6 +130,19 @@ namespace DungeonCrawler.MVC
         public Room CurrentRoom()
         {
             return null;
+        }
+
+        public string GetFile()
+        {
+            if(index >= 0)
+            {
+                projectDirectory = projectDirectory.Remove(index,stringToRemove.Length);
+                return projectDirectory;
+            }
+            else
+            {
+                return projectDirectory;
+            }
         }
     }
 }
