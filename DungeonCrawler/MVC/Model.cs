@@ -1,5 +1,6 @@
 using DungeonCrawler.Characters;
 
+
 namespace DungeonCrawler
 {
     public class Model
@@ -8,6 +9,7 @@ namespace DungeonCrawler
         private Player  player;
 
         public Player   Player => player;
+        public View view = new View();
 
         public void CreatePlayer(string name)
         {
@@ -26,5 +28,13 @@ namespace DungeonCrawler
         {
             return player.Health <= 0;
         }
+
+        public void MenuLogic(View view)
+        {
+            switch(view.ShowMenu())
+         
+        }
+
+
     }
 }

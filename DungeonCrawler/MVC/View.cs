@@ -11,6 +11,7 @@ namespace DungeonCrawler
         public View(Model model)
         {
             _model  = model;
+
         }
 
         public void Welcome()
@@ -18,8 +19,11 @@ namespace DungeonCrawler
             Console.WriteLine("Welcome to the dungeon!");
         }
 
+        private int choice, tempChoice;
+
         public int ShowMenu()
         {
+            
             Console.WriteLine("1. Move");
             Console.WriteLine("2. Attack");
             Console.WriteLine("3. Use Item");
@@ -27,9 +31,19 @@ namespace DungeonCrawler
 
             Console.Write("Choose your option: ");
 
-    
-            return Convert.ToInt32(Console.ReadLine());
-          
+            tempChoice = Convert.ToInt32(Console.ReadLine());
+
+            if(tempChoice == 1 || tempChoice == 2 || tempChoice == 3
+              || tempChoice == 4)
+            {
+                choice = tempChoice;
+            }
+            else
+            {
+                choice = 0;
+            }
+
+            return choice;
         }
 
 
