@@ -37,20 +37,27 @@ namespace DungeonCrawler
             Console.WriteLine("4. Exit game");
 
             Console.Write("Choose your option: ");
-            Console.Write("\n");
 
-            tempChoice = Convert.ToInt32(Console.ReadLine());
-
-            if(tempChoice == 1 || tempChoice == 2 || tempChoice == 3
-              || tempChoice == 4)
+            if (int.TryParse(Console.ReadLine(), out tempChoice))
             {
-                choice = tempChoice;
+                if(tempChoice == 1 || tempChoice == 2 || tempChoice == 3
+                || tempChoice == 4)
+                {
+                    choice = tempChoice;
+                }
+                else
+                {
+                    choice = 0;
+                }
             }
             else
             {
-                choice = 0;
+                Console.WriteLine("That's not a number");
             }
 
+            //tempChoice = Convert.ToInt32(Console.ReadLine());
+
+            
             return choice;
         }
 
@@ -118,6 +125,12 @@ namespace DungeonCrawler
                 break;
                 
             }
+        }
+
+        public void DisplayHealth(string name, int health)
+        {
+            Console.WriteLine($"{name}, health: {health}");
+            Console.WriteLine();
         }
 
         public void NoEnemies()
