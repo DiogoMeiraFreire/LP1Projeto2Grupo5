@@ -12,13 +12,12 @@ namespace DungeonCrawler
         {    
             Player player= new Player("Player");
             
-            //Map test code
-            /*Map map= new Map(6, 6);
+            Controller controller= new Controller();
 
-            map.FillMap();
-            
+
+ 
             //HealthPotion use test code
-            HealthPotion potion = new HealthPotion();
+            /*HealthPotion potion = new HealthPotion();
 
             player.UseItem(potion);
 
