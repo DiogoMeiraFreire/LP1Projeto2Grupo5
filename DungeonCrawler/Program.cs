@@ -128,8 +128,9 @@ namespace DungeonCrawler
                 }
             } */
 
-            controller.MenuLogic(view);
-            
+            controller.C_Welcome();
+            controller.MenuLogic();
+
 
 
 
