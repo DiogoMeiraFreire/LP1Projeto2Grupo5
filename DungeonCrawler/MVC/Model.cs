@@ -52,6 +52,11 @@ namespace DungeonCrawler
                 {
                     view.DisplayHealth(target.Name, target.Health);
                 }
+                if (target.Health == 0)
+                {
+                    view.EnemyDeath(target);
+                    map.map_room[i, j]._enemies.Clear();
+                }
             }
             else
             {
@@ -69,7 +74,11 @@ namespace DungeonCrawler
             }
             else
             {
-
+                if(room_name == "B6")
+                {
+                    //win message
+                    Environment.Exit(0);
+                }
                 switch (direction)
                 {   
                     case 'N':

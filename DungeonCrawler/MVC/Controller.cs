@@ -44,7 +44,8 @@ namespace DungeonCrawler
                     player.Attack(target);
                     model.DamageNumb(player, map);
                     target.Attack(player);
-                    model.DamageNumb(player, map);
+                    
+                    
                     
                     
                     MenuLogic();

@@ -55,11 +55,11 @@ namespace DungeonCrawler.Characters
         public void TakeDamage(int amount)
         {
             Health -= amount;
-            if (Health <= 0)
+            /* if (Health <= 0)
             {
+                //view.EnemyDeath(this);
                 
-                E_room._enemies.Clear();
-            }   
+            }    */
         }
 
         public void Die()
