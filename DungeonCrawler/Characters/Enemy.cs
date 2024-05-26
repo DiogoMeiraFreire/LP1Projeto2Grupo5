@@ -9,6 +9,7 @@ namespace DungeonCrawler.Characters
 {
     public class Enemy : ICharacter
     {
+        View view;
         public string Name { get; }
         /// <summary>
         /// Health points of a character
@@ -16,7 +17,7 @@ namespace DungeonCrawler.Characters
         public int Health { get; set; }
         public int L_Index { get;}
         public Room E_room {get;}  
-        public Room room;  
+       
 
         /// <summary>
         /// Attack Power of a character
@@ -54,15 +55,15 @@ namespace DungeonCrawler.Characters
         public void TakeDamage(int amount)
         {
             Health -= amount;
-            if (this.Health < 0)
+            if (Health <= 0)
             {
-                this.Die();
+                E_room._enemies.Clear();
             }   
         }
 
         public void Die()
         {
-            room._enemies.Remove(this);
+            E_room._enemies.Remove(this);
         }
     }
 }

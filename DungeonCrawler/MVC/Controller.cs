@@ -8,7 +8,7 @@ namespace DungeonCrawler
         
         static Model model = new Model();
 
-        Player player = model.Player;
+        Player player = model.player;
         Map map = model.map; 
 
         View view = model.view;
@@ -32,10 +32,27 @@ namespace DungeonCrawler
             {
                 case 1:
                     model.Move(view.RoomDescription(model.map));
+                    MenuLogic();
                     break;
-                case 2:
+                case 2://failsafe no enemies
+                    
                     (bool b, int i, int j, string room_name ) = map.CurrentRoom();
-                    player.Attack(map.map_room[i, j]._enemies[0]);
+                    if( map.map_room[i,j]._enemies.Count > 0 )
+                    {
+                    Enemy target =map.map_room[i, j]._enemies[0];
+                    //Console.WriteLine(target.Health);
+                    player.Attack(target);
+                    Console.WriteLine(target.Name+", health:"+target.Health);
+                    Console.WriteLine("\n");
+                    
+                    MenuLogic();
+                    }
+                    else
+                    {
+                        view.NoEnemies();
+                        MenuLogic();
+                    }
+
                     break;
 
                 case 3:

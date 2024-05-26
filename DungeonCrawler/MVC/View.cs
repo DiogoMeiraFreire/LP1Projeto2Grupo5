@@ -37,6 +37,7 @@ namespace DungeonCrawler
             Console.WriteLine("4. Exit game");
 
             Console.Write("Choose your option: ");
+            Console.Write("\n");
 
             tempChoice = Convert.ToInt32(Console.ReadLine());
 
@@ -119,6 +120,11 @@ namespace DungeonCrawler
             }
         }
 
+        public void NoEnemies()
+        {
+            Console.WriteLine("There are no Enemies...");
+            Console.WriteLine("\n");
+        }
 
         /// <summary>
         /// Displays the game's end message

@@ -45,7 +45,7 @@ namespace DungeonCrawler.MVC
 
             FillMap();
             //starting Room
-            PlayerMoveRoom("A1");
+            PlayerMoveRoom("A2");
 
         }
         

@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.Design;
 using DungeonCrawler.Characters;
 using DungeonCrawler.MVC;
 
@@ -8,9 +9,11 @@ namespace DungeonCrawler
     public class Model
     {
         public Map map = new Map(6,6);
-        private Player  player;
+        //private Player  player;
 
-        public Player   Player => player;
+        //public Player   Player => player;
+
+        public Player player = new Player("Jeremy");
         public View view = new View();
 
         public void CreatePlayer(string name)
@@ -53,6 +56,7 @@ namespace DungeonCrawler
                         {
                             map.PlayerMoveRoom(map.map_room[i-1,j]._name);
                             view.MoveOptions('N');
+                            
                         }
                         else
                         {

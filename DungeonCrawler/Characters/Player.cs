@@ -57,7 +57,7 @@ namespace DungeonCrawler.Characters
         //To complete and summarize
         public void Attack(ICharacter target)
         {
-            target.TakeDamage(this.AttackPower);
+            target.TakeDamage(AttackPower);
         }
 
         /// <summary>
