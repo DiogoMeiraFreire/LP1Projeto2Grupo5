@@ -7,7 +7,7 @@ namespace DungeonCrawler
 {
     public class Model
     {
-        Map map = new Map(6,6);
+        public Map map = new Map(6,6);
         private Player  player;
 
         public Player   Player => player;
@@ -31,32 +31,25 @@ namespace DungeonCrawler
             return player.Health <= 0;
         }
 
-        public void MenuLogic(View view)
+        public void Move(char direction)
         {
-            switch(view.ShowMenu())
-            {
-                case 1:
-                    //Move();
+            
+            (bool b, int i, int j, string room_name ) = map.CurrentRoom();
+            switch (direction)
+            {   
+                case 'N':
+                    map.PlayerMoveRoom(map.map_room[i-1,j]._name);
                     break;
-                case 2:
-                    //player.Attack(Enemy );
+                case 'S':
+                    map.PlayerMoveRoom(map.map_room[i+1,j]._name);
                     break;
-
-                case 3:
-                    view.ShowInventory(player.inventory);
+                case 'E':
+                    map.PlayerMoveRoom(map.map_room[i,j+1]._name);
                     break;
-
-                case 4:
-                    //Menu();
-                    break;
-
-                case 0:
-                    Console.WriteLine("Unknown choice.\n Please use one of the" + 
-                    "provided numbers");
-                    view.ShowMenu();
+                case 'W':
+                    map.PlayerMoveRoom(map.map_room[i,j-1]._name);
                     break;
             }
-         
         }
 
 

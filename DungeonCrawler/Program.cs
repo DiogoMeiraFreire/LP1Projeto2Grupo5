@@ -90,7 +90,7 @@ namespace DungeonCrawler
 
 
 
-            Map map= new Map(6,6);
+            //Map map= new Map(6,6);
 
             /*foreach(string s in map.map_2)
             {
@@ -101,14 +101,33 @@ namespace DungeonCrawler
                 Console.WriteLine(r._name);
             } */
 
-            for (int i = 0; i < map.MapX ; i++)
+            /* for (int i = 0; i < map.MapX ; i++)
             {
                 for (int j = 0 ; j < map.MapY ; j++)
                 {
                    Console.WriteLine($"{map.map_room[i,j]._name}:{map.map_player[i,j]}");
                 }
+            } */
+            
+            for (int i = 0; i < model.map.MapX ; i++)
+            {
+                for (int j = 0 ; j < model.map.MapY ; j++)
+                {
+                    Console.WriteLine($"{model.map.map_room[i,j]._name}:{model.map.map_player[i,j]}");
+                }
             }
             
+            model.Move('E');
+            Console.WriteLine("\n");
+
+            for (int i = 0; i < model.map.MapX ; i++)
+            {
+                for (int j = 0 ; j < model.map.MapY ; j++)
+                {
+                    Console.WriteLine($"{model.map.map_room[i,j]._name}:{model.map.map_player[i,j]}");
+                }
+            }
+
 
        }
     }

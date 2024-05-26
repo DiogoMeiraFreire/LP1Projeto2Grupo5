@@ -45,7 +45,7 @@ namespace DungeonCrawler.MVC
 
             FillMap();
             //starting Room
-            PlayerInRoom("D2");
+            PlayerMoveRoom("D2");
 
         }
         
@@ -60,7 +60,7 @@ namespace DungeonCrawler.MVC
                 for (int j = 0 ; j < MapY ; j++)
                 {
                     map_player[i,j] = false;
-                    map_nams[i , j] = $"{(char)('A' + j)}{i + 1}";
+                    map_nams[i , j] = $"{(char)('A' + i)}{j + 1}";
                     Room room = new Room(GetFile(),map_nams[i,j]);
                     map_room[i,j] = room;
                 }
@@ -69,104 +69,41 @@ namespace DungeonCrawler.MVC
             
         }
 
-        /// <summary>
-        /// fills map with A1-F6
-        /// </summary>
-        /* public void FillMap()
-        {
-            
-            //fills the map
-            for(int i = 0; i < MapX; i++)
-            {
-                //fills map with A-F
-                switch(i)
-                    {
-                        case 0:
-                            for(int y = 0; y < MapX; y++){ map_s[i,y] = "A";}
-                            break;
-                        case 1:
-                            for(int y = 0; y < MapX; y++){ map_s[i,y] = "B";}
-                            break;
-                        case 2:
-                            for(int y = 0; y< MapX; y++){ map_s[i,y] = "C";}
-                            break;
-                        case 3:
-                            for(int y = 0; y< MapX; y++){ map_s[i,y] = "D";}
-                            break;
-                        case 4:
-                            for(int y = 0; y< MapX; y++){ map_s[i,y] = "E";}
-                            break;
-                        case 5:
-                           for(int y = 0; y< MapX; y++){ map_s[i,y] = "F";}
-                            break;
-                    }
-                
-                ////fills map with 1-6
-                for (int j = 0; j < MapY; j++)
-                {
-                    switch(j)
-                    {
-                        case 0:
-                            map_s[i,j]  += "1";
-                            break;
-                        case 1:
-                            map_s[i,j]  += "2";
-                            break;
-                        case 2:
-                            map_s[i,j]  += "3";
-                            break;
-                        case 3:
-                            map_s[i,j]  += "4";
-                            break;
-                        case 4:
-                            map_s[i,j]  += "5";
-                            break;
-                        case 5:
-                            map_s[i,j]  += "6";
-                            break;
-                    }
-                    
-                }
 
-                
-            }
-            
-            foreach(string s in map_s)
-            {
-                Console.WriteLine(s);
-            }
-        } */
-    
     
         /// <summary>
         /// This method determines where the player is
         /// </summary>
-        /// <returns></returns>
-        public (bool,string) CurrentRoom()
+        /// <returns>Touple with room index and name</returns>
+        public (bool,int,int,string) CurrentRoom()
         {
             bool tmpB = false;
+            int reti = 0;
+            int retj = 0;
             
             string room_name = "";
 
-            for (int i = 0; i < MapX ; i++)
+            for (int i = 0; i < MapY ; i++)
             {
-                for (int j = 0 ; j < MapY ; j++)
+                for (int j = 0 ; j < MapX ; j++)
                 {
                     if(map_player[i,j] == true)
                     { 
+                        reti = i;
+                        retj = j;
                         tmpB = true;
                         room_name = map_room[i,j]._name;
                     }
                 }
             }
-            return (tmpB,room_name);
+            return (tmpB,reti,retj,room_name);
         }
 
         /// <summary>
         /// Dictates where the player is, has to be used to update the player location
         /// </summary>
         /// <param name="room_name">Dictates where the player will be</param>
-        public void PlayerInRoom(string room_name)
+        public void PlayerMoveRoom(string room_name)
         {
             for (int i = 0; i < MapX ; i++)
             {
