@@ -1,4 +1,5 @@
 using DungeonCrawler.Items;
+using DungeonCrawler.MVC;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -67,6 +68,44 @@ namespace DungeonCrawler
 
             return Convert.ToInt32(Console.ReadLine());
         }
+
+        private string RoomDescription(Map map, string roomName, bool b)
+        {
+            (b, roomName) = map.CurrentRoom();
+
+            Console.WriteLine(roomName);
+            foreach (Room room in map.map_room)
+            {
+                if (room._name == roomName)
+                {
+                    Console.WriteLine(room._des);
+                }
+            }
+
+            Console.WriteLine("N - North \nS - South \nE - East \nW - West");
+            Console.Write("\nPlease choose which direction you want to go:");
+            return Console.ReadLine();
+        }
+
+        private void MoveOptions(char option)
+        {
+            switch (option)
+            {
+                case 'N':
+                    Console.WriteLine("You moved North");
+                    break;
+                case 'S':
+                    Console.WriteLine("You moved South");
+                    break;
+                case 'E':
+                    Console.WriteLine("You moved East");
+                    break;
+                case 'W':
+                    Console.WriteLine("You moved West");
+                    break;
+            }
+        }
+
 
         /// <summary>
         /// Displays the game's end message
