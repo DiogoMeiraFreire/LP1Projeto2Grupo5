@@ -30,7 +30,7 @@ namespace DungeonCrawler
 
         public int ShowMenu()
         {
-            
+               
             Console.WriteLine("1. Move");
             Console.WriteLine("2. Attack");
             Console.WriteLine("3. Use Item");

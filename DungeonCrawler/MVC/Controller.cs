@@ -9,11 +9,22 @@ namespace DungeonCrawler
         static Model model = new Model();
 
         Player player = model.Player;
-        Map viewMap = model.map; 
+        Map map = model.map; 
         public void MenuLogic(View view)
         {
             //view.Welcome();
             //view.WaitForKey();
+            (bool bb, int ii, int jj, string rroom_name ) = map.CurrentRoom();
+            //Console.WriteLine(map.map_room[ii,jj]._enemies[0].Name);
+            Console.WriteLine(map.map_room[ii,jj]._potions.Count);
+            Console.WriteLine(map.map_room[ii,jj]._name);
+            /* int e_count = 0;
+            foreach(Room r in map.map_room)
+            {
+              e_count += r._enemies.Count;
+            }
+            Console.WriteLine(e_count);
+         */
 
             switch(view.ShowMenu())
             {
@@ -21,8 +32,8 @@ namespace DungeonCrawler
                     model.Move(view.RoomDescription(model.map));
                     break;
                 case 2:
-                    (bool b, int i, int j, string room_name ) = viewMap.CurrentRoom();
-                    player.Attack(viewMap.map_room[i, j]._enemies[0]);
+                    (bool b, int i, int j, string room_name ) = map.CurrentRoom();
+                    player.Attack(map.map_room[i, j]._enemies[0]);
                     break;
 
                 case 3:

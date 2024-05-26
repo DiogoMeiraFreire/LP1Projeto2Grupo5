@@ -96,25 +96,35 @@ namespace DungeonCrawler.MVC
            else
            {
             foreach(string i in R_items)
-            {
+            {   
+                if (i.Length > 1)
+                {
                 HealthPotion potion = new HealthPotion();
                 _potions.Add(potion);
+                }   
             }
            }
            
-           if (R_enemyCount == null)
+           if (R_enemyCount == null && R_enemyCount[0] != "")
            {
+            _enemies.Clear();
             Console.WriteLine("Enemy array is null. Make sure to call FileParser first.");
             return;
            }
            else
            {
+                
                 foreach(string i in R_enemyCount)
                 {
+                    if (i.Length > 1)
+                    {
                     Enemy enemy = new Enemy(i, this);
                     //enemy.
-                    _enemies.Add(enemy);
+                    _enemies.Add(enemy);  
+                    }
+                    
                 }
+                
            }
            
         } 

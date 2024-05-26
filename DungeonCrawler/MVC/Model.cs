@@ -61,7 +61,6 @@ namespace DungeonCrawler
                 
                         break;
                     case 'S':
-                        //result is valid if dcheck is true
                         if(i != map.MapY && map.map_room[i,j].DoorChecker(map.map_room[i+1,j]._name)
                         == true)
                         {
