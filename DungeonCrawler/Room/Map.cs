@@ -44,7 +44,8 @@ namespace DungeonCrawler.MVC
             map_player = new bool[mapX, mapY];
 
             FillMap();
-            PlayerInRoom("A1");
+            //starting Room
+            PlayerInRoom("D2");
 
         }
         
@@ -161,7 +162,10 @@ namespace DungeonCrawler.MVC
             return (tmpB,room_name);
         }
 
-
+        /// <summary>
+        /// Dictates where the player is, has to be used to update the player location
+        /// </summary>
+        /// <param name="room_name">Dictates where the player will be</param>
         public void PlayerInRoom(string room_name)
         {
             for (int i = 0; i < MapX ; i++)
@@ -172,6 +176,8 @@ namespace DungeonCrawler.MVC
                    {
                     map_player[i,j] = true;
                    }
+                   else
+                   {map_player[i,j]= false;}
                 }
             }
         }
