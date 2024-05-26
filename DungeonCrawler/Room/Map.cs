@@ -10,7 +10,7 @@ namespace DungeonCrawler.MVC
         public int MapY;
         public int MapX;
 
-        public string[,] map_s;
+        public Room[,] map_s;
 
         /// <summary>
         /// MapX should be Columns, MapY should be rows
@@ -22,14 +22,14 @@ namespace DungeonCrawler.MVC
             MapY = mapY;
             MapX = mapX;
 
-            map_s = new string[mapY,mapX];
+            map_s = new Room[mapY,mapX];
 
         }
         
         /// <summary>
         /// fills map with A1-F6
         /// </summary>
-        public void FillMap()
+        /* public void FillMap()
         {
             
             //fills the map
@@ -92,7 +92,7 @@ namespace DungeonCrawler.MVC
             {
                 Console.WriteLine(s);
             }
-        }
+        } */
     
         public Room CurrentRoom()
         {
