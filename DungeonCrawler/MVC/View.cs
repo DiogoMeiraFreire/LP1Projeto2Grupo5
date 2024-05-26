@@ -69,10 +69,12 @@ namespace DungeonCrawler
             return Convert.ToInt32(Console.ReadLine());
         }
 
-        public string RoomDescription(Map map, string roomName, bool b)
+        public char RoomDescription(Map map)
         {
+            bool b;
+            string roomName;
             int throaway1, throwaway2;
-            (b, throaway1, throwaway2, roomName) = map.CurrentRoom();
+            (b, throaway1, throwaway2,roomName) = map.CurrentRoom();
 
             Console.WriteLine(roomName);
             foreach (Room room in map.map_room)
@@ -85,7 +87,7 @@ namespace DungeonCrawler
 
             Console.WriteLine("N - North \nS - South \nE - East \nW - West");
             Console.Write("\nPlease choose which direction you want to go:");
-            return Console.ReadLine();
+            return Convert.ToChar(Console.ReadLine());
         }
 
         public void MoveOptions(char option)
@@ -107,6 +109,13 @@ namespace DungeonCrawler
                 case 'L':
                     Console.WriteLine("You walk into a wall");
                     break;
+                case 'B':
+                    Console.WriteLine("You can't move the enemy is right in front of you!");
+                break;
+                default:
+                    Console.WriteLine("Please input a valid cardinal direction..");
+                break;
+                
             }
         }
 

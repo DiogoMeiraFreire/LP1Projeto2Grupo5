@@ -50,7 +50,7 @@ namespace DungeonCrawler
             
             if (!File.Exists(FilePath) || new FileInfo(FilePath).Length == 0)
             {
-                //room.CreateFile(FilePath);
+                Console.WriteLine("NO file detected please confirm you have the correct file.");
             }
 
             /*Door Checker test this block will need to be implemented somewhere else
@@ -109,7 +109,7 @@ namespace DungeonCrawler
                 }
             } */
             
-            for (int i = 0; i < model.map.MapX ; i++)
+            /* for (int i = 0; i < model.map.MapX ; i++)
             {
                 for (int j = 0 ; j < model.map.MapY ; j++)
                 {
@@ -126,7 +126,9 @@ namespace DungeonCrawler
                 {
                     Console.WriteLine($"{model.map.map_room[i,j]._name}:{model.map.map_player[i,j]}");
                 }
-            }
+            } */
+
+            controller.MenuLogic(view);
 
 
        }

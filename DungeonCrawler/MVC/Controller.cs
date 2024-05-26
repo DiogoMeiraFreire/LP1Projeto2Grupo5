@@ -1,23 +1,28 @@
 using System;
 using DungeonCrawler.Characters;
-
+using DungeonCrawler.MVC;
 namespace DungeonCrawler
 {
     public class Controller
     {
-        private Player player;
+        
+        static Model model = new Model();
+
+        Player player = model.Player;
+        Map viewMap = model.map; 
         public void MenuLogic(View view)
         {
-            view.Welcome();
+            //view.Welcome();
             //view.WaitForKey();
 
             switch(view.ShowMenu())
             {
                 case 1:
-                    //Move();
+                    model.Move(view.RoomDescription(model.map));
                     break;
                 case 2:
-                    //player.Attack(Enemy);
+                    (bool b, int i, int j, string room_name ) = viewMap.CurrentRoom();
+                    player.Attack(viewMap.map_room[i, j]._enemies[0]);
                     break;
 
                 case 3:
@@ -25,7 +30,7 @@ namespace DungeonCrawler
                     break;
 
                 case 4:
-                    //Menu();
+                    Environment.Exit(0);
                     break;
 
                 case 0:
