@@ -37,7 +37,7 @@ f1_R_D:E1_F2
 R_N:A2
 A2_R_Des:"As you open the door you feel a bit of warmth coming from somewhere, you quickly determine that it must be the smelter thats in one of the walls of this brick room. As you examine the room further, this seems like a smithy where metal is forged and usually where weapons and armor is made. You seem some tools on top of a table but the wooden handlebar are rotten, making the tools unusable. You decide to examine the smelter that you thought was the source of the heat in this room, at first sight nothing seems to be active and there are no flames but as soon as you attempt to grab a piece of coal, you get slightly burnt, indicating that while the smelter is not active now, it hanst been long since it was used, leaving you to wonder if you really are alone in this dungeon..."
 A2_R_Itm:Potion
-A2_R_E:
+A2_R_E:Skeleton
 a2_R_D:A1_B2
 
 R_N:B2
