@@ -1,6 +1,7 @@
 using DungeonCrawler.Items;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace DungeonCrawler
 {
@@ -8,6 +9,19 @@ namespace DungeonCrawler
     {
         public void Welcome()
         {
+            Console.WriteLine(
+            "Welcome to Yet Another Dungeon Crawler, a game where you are thrown"
+            + " into a dungeon and your sole purpose is to get out alive. You "
+            + "will face Enemies, find hidden Loot and explore this dungeon as"
+            + " you try to reach the Exit.\n While entering the different rooms,"
+            + " you will get a description of the appearance of room and any"
+            + " notable aspect. \n As the player, you have the possibility"
+            + " to <Attack> the enemies, move to another room if there is a way"
+            + " there with <Move>, items are picked up automatically and use"
+            + " any item you have previously picked <Use Item>. \nYou can also"
+            + " check your inventory by typing <inventory> and your health with"
+            + " <health>.\n");
+            
             Console.WriteLine("Welcome to the dungeon!");
         }
 
@@ -19,7 +33,7 @@ namespace DungeonCrawler
             Console.WriteLine("1. Move");
             Console.WriteLine("2. Attack");
             Console.WriteLine("3. Use Item");
-            Console.WriteLine("4. Menu");
+            Console.WriteLine("4. Exit game");
 
             Console.Write("Choose your option: ");
 
@@ -38,7 +52,6 @@ namespace DungeonCrawler
             return choice;
         }
 
-
         public int ShowInventory(List<Item> inventory)
         {
             Console.WriteLine("Inventory: ");
@@ -55,29 +68,6 @@ namespace DungeonCrawler
             return Convert.ToInt32(Console.ReadLine());
         }
 
-
-        public string ReadInput()
-        {
-            return Console.ReadLine();
-        }
-
-        public void WaitForKey()
-        {
-            Console.Write("\nPress any key to continue...");
-
-            Console.ReadKey(true);
-
-            Console.WriteLine("\n");
-        }
-
-        public void ErrorMessage(string message ="")
-        {
-            if (message.Length <= 0) Console.WriteLine("Unkown Error");
-
-            Console.WriteLine(message);
-            
-        }
-
         /// <summary>
         /// Displays the game's end message
         /// </summary>
@@ -85,5 +75,6 @@ namespace DungeonCrawler
         {
             Console.WriteLine("Game Over");
         }        
+
     }
 }
