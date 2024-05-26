@@ -11,13 +11,14 @@ namespace DungeonCrawler
     {
         static void Main(string[] args)
         {    
+            Player player= new Player("Player");
+            
             //Map test code
             /*Map map= new Map(6, 6);
 
             map.FillMap();
             
             //HealthPotion use test code
-            Player player= new Player("HomieI");
             HealthPotion potion = new HealthPotion();
 
             player.UseItem(potion);
@@ -43,7 +44,6 @@ namespace DungeonCrawler
 
             //Combine the current directory with the fileName to get the path
             string FilePath = Path.Combine(projectDirectory, fileName);
-            Console.WriteLine(FilePath);
 
             Room room = new Room(FilePath,"C2");
             //room.EntityPopulator();
