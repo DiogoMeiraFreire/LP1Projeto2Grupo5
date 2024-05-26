@@ -44,6 +44,7 @@ namespace DungeonCrawler.MVC
             map_player = new bool[mapX, mapY];
 
             FillMap();
+            PlayerInRoom("A1");
 
         }
         
@@ -154,13 +155,27 @@ namespace DungeonCrawler.MVC
                     { 
                         tmpB = true;
                         room_name = map_room[i,j]._name;
-                        
-
                     }
                 }
             }
             return (tmpB,room_name);
         }
+
+
+        public void PlayerInRoom(string room_name)
+        {
+            for (int i = 0; i < MapX ; i++)
+            {
+                for (int j = 0 ; j < MapY ; j++)
+                {
+                   if(room_name == map_room[i,j]._name)
+                   {
+                    map_player[i,j] = true;
+                   }
+                }
+            }
+        }
+
 
         public string GetFile()
         {

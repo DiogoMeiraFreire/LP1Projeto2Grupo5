@@ -1,12 +1,13 @@
 using System;
 using DungeonCrawler.Characters;
+using DungeonCrawler.MVC;
 
 
 namespace DungeonCrawler
 {
     public class Model
     {
-
+        Map map = new Map(6,6);
         private Player  player;
 
         public Player   Player => player;
