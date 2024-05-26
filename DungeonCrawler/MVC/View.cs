@@ -49,15 +49,6 @@ namespace DungeonCrawler
             return Convert.ToInt32(Console.ReadLine());
         }
 
-        public void NewLineMessage(string message)
-        {
-            Console.WriteLine(message);
-        }
-
-        public void LineMessage(string message)
-        {
-            Console.Write(message);
-        }
 
         public string ReadInput()
         {
