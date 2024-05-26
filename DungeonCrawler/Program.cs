@@ -13,6 +13,8 @@ namespace DungeonCrawler
             Player player= new Player("Player");
             
             Controller controller= new Controller();
+            View view = new View();
+            Model model = new Model();
 
 
  
@@ -94,11 +96,19 @@ namespace DungeonCrawler
             {
                 Console.WriteLine(s);
             }*/
-            foreach(Room r in map.map_room)
+            /* foreach(Room r in map.map_room)
             {
                 Console.WriteLine(r._name);
-            }
+            } */
 
+            for (int i = 0; i < map.MapX ; i++)
+            {
+                for (int j = 0 ; j < map.MapY ; j++)
+                {
+                   Console.WriteLine($"{map.map_room[i,j]._name}:{map.map_player[i,j]}");
+                }
+            }
+            
 
        }
     }

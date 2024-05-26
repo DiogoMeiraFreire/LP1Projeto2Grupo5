@@ -9,7 +9,7 @@ namespace DungeonCrawler
         public void MenuLogic(View view)
         {
             view.Welcome();
-            view.WaitForKey();
+            //view.WaitForKey();
 
             switch(view.ShowMenu())
             {
