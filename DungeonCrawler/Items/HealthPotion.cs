@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace DungeonCrawler.Items
 {
@@ -9,11 +6,12 @@ namespace DungeonCrawler.Items
     {
         Random random = new Random();
         public override string Name => throw new NotImplementedException();
-        public override int Use()
+        private Player player;
+
+        public override void Use()
         {
             int healing_amount = random.Next(0,25);
-
-            return healing_amount;
+            player.Heal(healing_amount);
         }
 
         public override void Interact()

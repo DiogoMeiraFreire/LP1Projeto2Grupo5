@@ -12,7 +12,7 @@ namespace DungeonCrawler
         static void Main(string[] args)
         {    
             //Map test code
-           /* Map map= new Map(6, 6);
+            /*Map map= new Map(6, 6);
 
             map.FillMap();
             
@@ -20,13 +20,13 @@ namespace DungeonCrawler
             Player player= new Player("HomieI");
             HealthPotion potion = new HealthPotion();
 
-            player.Heal(potion);
+            player.UseItem(potion);
 
             Console.WriteLine($"{player.Health}");
 
-            player.Heal(potion);
+            player.UseItem(potion);
 
-            Console.WriteLine($"{player.Health}")*/
+            Console.WriteLine($"{player.Health}");*/
 
 
             string fileName = @"RoomDescriptions.txt";

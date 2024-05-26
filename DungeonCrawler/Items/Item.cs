@@ -12,6 +12,6 @@ namespace DungeonCrawler.Items
         /// <summary>
         /// What happens when the item is used
         /// </summary>
-        public abstract int Use();
+        public abstract void Use();
     }
 }
