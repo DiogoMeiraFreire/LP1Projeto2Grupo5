@@ -317,7 +317,7 @@ E5_R_Des:"As you enter this room you feel a chill, this seemingly lifeless room
 made of stone walls, dosnt have much to contemplate. The small gust of 
 wind you feel leaves you with hope of an outside but unable to determine 
 from where the gust is coming, there is nothing left to do in this room."
-E5_R_Itm:Key
+E5_R_Itm:
 E5_R_E:
 e5_R_D:D5_E4_E6_F5
 
@@ -342,8 +342,8 @@ a6_R_D:A5_B6
 R_N:B6
 B6_R_Des:"When you enter this room you dont see nothing standing out immediately but upon
 closer inspection, one of the doors seem different from all those you have seen along
-the way. The door to the south appears locked, requiring a key to open and second, its 
-much more sturdy than the previous doors, no matter what you do it dosnt seem to break."
+the way. The door to the south appears more robust but a breeze of air passes through
+the hinges, it may be the exit door."
 B6_R_Itm:
 B6_R_E:
 b6_R_D:A6_B5
