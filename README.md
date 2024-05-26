@@ -31,25 +31,71 @@ O jogo acaba quando o jogador ou chega ao fim e escapa com sucesso ou quando a s
 **André Sebastião**
  - Criação do documento README.md.
  - Implementação e integração dos diferentes elementos e fluxogramas no documento README.md.
- - Criação do Game Design do jogo.
- - Descrição das salas e itens
+ - Criação do Game Design do jogo (Variavéis e Valores).
+ - Descrição das salas e itens.
  - Criação da introdução do jogo ao jogador.
+ - Controlador MVC.
  
 **António Sotto-Mayor**
-- Criação das várias peças do jogo.
-- Criação do tabuleiro de jogo.
-- Implementação das regras
+- Lógica do Player.
+- Lógica do Inimigo.
+- Criação do mapa.
+- Sistema de deteção do player.
+- Sistema das salas e mapa do jogo.
 - Resolução de bugs.
 
 **Diogo Freire**
-- Implementação das peças coloridas.
-- Menu inicial.
-- Implementação das regras.
+- MVC Inicial.
+- Deteção do ficheiro de texto.
+- Failsafe system.
+- Interfaces ICharacter e IView.
+- Lógica de Itens.
+- Lógica do Player.
 - Resolução de bugs.
 
 # Arquitetura da Solução
+Como requerimento do projeto, o programa deve funcionar em Windows, macOS e Linux, impedindo a utilização de alguns métodos incompatíveis com outras plataformas. O programa também necessitava da implementação de um sistema MVC - Model, View and Controller para uma boa organização do mesmo.
+O primeiro problema encontrado no projeto foi a geração do mapa com os parâmetros necessários. De momento, o código está feito de maneira a aceitar um mapa de qualquer tamanho, mas para propósitos deste exercício, o mapa é de 6x6. 
+Foi criado 2 array bidimensionais para expressar o mapa e o jogador a interagir com o mesmo. O primeiro foi criado com base nos parâmetros definidos e descrições das salas, que neste momento estão todos definidos num .txt que contem a informação toda das salas. O segundo array é necessário para o movimento e localização do jogador, isto sendo feito desta maneira, pois fazer tudo no primeiro array necessitava a leitura e edição do ficheiro .txt, desta maneira temos 2 array que funcionam como guia um do outro, comparando valores do índex para manter a informação coerente.
+Após ter a geração do nível feito, o que faltava era popular o mapa. O Player e Enemy ambos herdam informação de uma interface ICharacters que contem os parâmetros em comum para qualquer habitante desta masmorra. 
+Tudo isto foi feito em conta o sistema MVC, mantendo a lógica no Model, a informação dada e recebida do jogador no View e a interpretação dos inputs e game loop no Controller.
 
-## Fluxograma
+## Diagrama UML
+'''mermaid
+
+classDiagram
+
+    Model       <--     Program
+    
+    Controller  <--     Program
+
+    View        <--     Program
+    View        <--     Controller
+    View        <--     Model
+    
+    IView       <|..    View
+
+    Player      <--     Controller
+    Player      <--     Model
+
+    Item        --*     Player
+    Item        <|--    HealthPotion
+
+    ICharacter  <|..    Player
+    ICharacter  <|..    Enemy
+
+    Map         <--     Controller
+    Map         <--     Model
+
+    class Item
+    <<abstract>>    Item
+
+    class ICharacter 
+    <<interface>>   ICharacter 
+
+    class IView
+    <<interface>>   IView 
+'''
 
 # Referências
 - [1]  Whitaker, R. B. (2022). **The C# Player's Guide** (5th Edition). Starbound Software.
