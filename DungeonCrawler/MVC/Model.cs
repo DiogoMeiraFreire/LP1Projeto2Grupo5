@@ -71,6 +71,7 @@ namespace DungeonCrawler
             if (room._enemies.Count != 0)
             {
                 view.MoveOptions('B');
+                view.WinMessage();
             }
             else
             {

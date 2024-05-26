@@ -20,7 +20,7 @@ namespace DungeonCrawler
         /// Shows the inventory
         /// </summary>
         /// <param name="inventory"> a list of the inventory items </param>
-        int ShowInventory(List<Item> inventory);
+        void ShowInventory(List<Item> inventory);
 
         /// <summary>
         /// Displays the final message

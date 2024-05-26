@@ -60,6 +60,7 @@ namespace DungeonCrawler
 
                 case 3:
                     view.ShowInventory(player.inventory);
+                    player.UseItem(view.ItemChoice());
                     break;
 
                 case 4:

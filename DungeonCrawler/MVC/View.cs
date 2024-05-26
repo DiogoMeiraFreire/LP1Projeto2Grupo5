@@ -31,7 +31,6 @@ namespace DungeonCrawler
 
         public int ShowMenu()
         {
-               
             Console.WriteLine("1. Move");
             Console.WriteLine("2. Attack");
             Console.WriteLine("3. Use Item");
@@ -54,15 +53,14 @@ namespace DungeonCrawler
             else
             {
                 Console.WriteLine("That's not a number");
+                choice = 0;
             }
-
-            //tempChoice = Convert.ToInt32(Console.ReadLine());
 
             
             return choice;
         }
 
-        public int ShowInventory(List<Item> inventory)
+        public void ShowInventory(List<Item> inventory)
         {
             Console.WriteLine("Inventory: ");
             
@@ -72,10 +70,23 @@ namespace DungeonCrawler
                 Console.WriteLine($"{i} - {item.Name}");
                 i++;
             }
+        }
 
+        public int ItemChoice()
+        {
             Console.Write("Choose an item: ");
-
-            return Convert.ToInt32(Console.ReadLine());
+            int exampleInput;
+            string inputString = Console.ReadLine();
+            
+            if (int.TryParse(inputString, out exampleInput))
+            {
+                return Convert.ToInt32(inputString);
+            }   
+            else
+            {
+                Console.WriteLine("That is not a number, please insert a number.");
+                return ItemChoice();
+            }   
         }
 
         public char RoomDescription(Map map)
@@ -149,6 +160,11 @@ namespace DungeonCrawler
         {
             Console.WriteLine($"{name}, health: {health}");
             Console.WriteLine();
+        }
+
+        public void WinMessage()
+        {
+            Console.WriteLine("You win!");
         }
 
         public void NoEnemies()

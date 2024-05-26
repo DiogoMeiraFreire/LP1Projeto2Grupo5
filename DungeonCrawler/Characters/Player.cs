@@ -71,9 +71,12 @@ namespace DungeonCrawler.Characters
 
         public void UseItem(int index)
         {
-            Item tmpItem = inventory[index];
-            tmpItem.Use();
-            inventory.RemoveAt(index);
+            if (inventory[index] != null)
+            {
+                Item tmpItem = inventory[index];
+                tmpItem.Use();
+                inventory.RemoveAt(index);
+            }
         }
 
         /// <summary>

@@ -9,7 +9,6 @@ namespace DungeonCrawler.Characters
 {
     public class Enemy : ICharacter
     {
-        View view;
         public string Name { get; }
         /// <summary>
         /// Health points of a character
