@@ -49,7 +49,7 @@ namespace DungeonCrawler
             
             if (!File.Exists(FilePath) || new FileInfo(FilePath).Length == 0)
             {
-                room.CreateFile(FilePath);
+                //room.CreateFile(FilePath);
             }
 
             /*Door Checker test this block will need to be implemented somewhere else
@@ -95,7 +95,7 @@ namespace DungeonCrawler
             {
                 Console.WriteLine(s);
             }*/
-            foreach(Room r in map.map_1)
+            foreach(Room r in map.map_room)
             {
                 Console.WriteLine(r._name);
             }

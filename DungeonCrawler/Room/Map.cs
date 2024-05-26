@@ -22,8 +22,10 @@ namespace DungeonCrawler.MVC
         public int MapY;
         public int MapX;
 
-        public Room[,] map_1;
-        public string[,] map_2;
+        public Room[,] map_room;
+        public string[,] map_nams;
+
+        public bool[,] map_player;
 
         /// <summary>
         /// MapX should be Columns, MapY should be rows
@@ -35,24 +37,30 @@ namespace DungeonCrawler.MVC
             MapY = mapY;
             MapX = mapX;
 
-            map_1 = new Room[mapX, mapY];
+            map_room = new Room[mapX, mapY];
 
-            map_2 = new string[mapX, mapY];
+            map_nams = new string[mapX, mapY];
+
+            map_player = new bool[mapX, mapY];
 
             FillMap();
 
         }
         
         //j sao colunas i sao rows
+        /// <summary>
+        /// This method fills the 3 bi-demensional arrays.
+        /// </summary>
         public void FillMap() 
         {
             for (int i = 0; i < MapX ; i++)
             {
                 for (int j = 0 ; j < MapY ; j++)
                 {
-                    map_2[i , j] = $"{(char)('A' + j)}{i + 1}";
-                    Room room = new Room(GetFile(),map_2[i,j]);
-                    map_1[i,j] = room;
+                    map_player[i,j] = false;
+                    map_nams[i , j] = $"{(char)('A' + j)}{i + 1}";
+                    Room room = new Room(GetFile(),map_nams[i,j]);
+                    map_room[i,j] = room;
                 }
             }
 
@@ -127,9 +135,31 @@ namespace DungeonCrawler.MVC
             }
         } */
     
-        public Room CurrentRoom()
+    
+        /// <summary>
+        /// This method determines where the player is
+        /// </summary>
+        /// <returns></returns>
+        public (bool,string) CurrentRoom()
         {
-            return null;
+            bool tmpB = false;
+            
+            string room_name = "";
+
+            for (int i = 0; i < MapX ; i++)
+            {
+                for (int j = 0 ; j < MapY ; j++)
+                {
+                    if(map_player[i,j] == true)
+                    { 
+                        tmpB = true;
+                        room_name = map_room[i,j]._name;
+                        
+
+                    }
+                }
+            }
+            return (tmpB,room_name);
         }
 
         public string GetFile()
