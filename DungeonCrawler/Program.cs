@@ -10,17 +10,14 @@ namespace DungeonCrawler
     class Program
     {
         static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-            
-            
+        {    
             //Map test code
            /* Map map= new Map(6, 6);
 
-            map.FillMap();*/
+            map.FillMap();
             
             //HealthPotion use test code
-            /*Player player= new Player("HomieI");
+            Player player= new Player("HomieI");
             HealthPotion potion = new HealthPotion();
 
             player.Heal(potion);
@@ -56,14 +53,14 @@ namespace DungeonCrawler
                 room.CreateFile(FilePath);
             }
 
-            //Door Checker test this block will need to be implemented somewhere else
-            /*string testName = "A2";
+            /*Door Checker test this block will need to be implemented somewhere else
+            string testName = "A2";
             if (room.DoorChecker(testName) != null && Room.RoomList.Contains(testName) == false)
             {Room C2 = new Room(FilePath, testName);}
-            Console.WriteLine(Room.RoomList.Count);*/
+            Console.WriteLine(Room.RoomList.Count);
             
             
-            /*Room B2 = new Room(FilePath,"B2");
+            Room B2 = new Room(FilePath,"B2");
             Room C2 = new Room(FilePath,"C2");
 
             Console.WriteLine(Room.RoomList.Count);
@@ -72,10 +69,10 @@ namespace DungeonCrawler
             Console.WriteLine("\n"+B2._potions.Count);
             Console.WriteLine(B2._enemies.Count);
             Console.WriteLine("\n"+C2._potions.Count);
-            Console.WriteLine(C2._enemies.Count);*/
+            Console.WriteLine(C2._enemies.Count);
 
             // Healing Pot Test
-            /*
+            
             Player player= new Player("jeremy");
 
             Console.WriteLine(room._potions.Count);
@@ -87,9 +84,10 @@ namespace DungeonCrawler
             player.Heal(0);
             Console.WriteLine("\n"+player.inventory.Count);
             Console.WriteLine(player.Health);
-            */
+            
             //Console.WriteLine(room._enemies.Count);
-            //Console.WriteLine(room._enemyCount.Length);
+            //Console.WriteLine(room._enemyCount.Length);*/
+
             Enemy tmpenemy = room._enemies[0];
 
             Console.WriteLine(tmpenemy.E_room._name);

@@ -61,18 +61,14 @@ namespace DungeonCrawler
             Health -= amount;
             if (this.Health < 0)
             {
-                this.EnemyDie(room);
+                this.Die();
             }   
         }
 
-        public void EnemyDie(Room room)
-        {
-             room._enemies.Remove(this);
-        }
 
         public void Die()
         {
-            throw new NotImplementedException();
+            room._enemies.Remove(this);
         }
 
 

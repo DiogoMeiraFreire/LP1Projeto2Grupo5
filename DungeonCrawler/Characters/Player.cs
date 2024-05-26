@@ -83,7 +83,8 @@ namespace DungeonCrawler
 
         public void Die()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("You died!");
+            Environment.Exit(0);
         }
 
         /// <summary>
