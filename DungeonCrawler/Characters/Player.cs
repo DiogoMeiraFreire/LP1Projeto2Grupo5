@@ -46,6 +46,7 @@ namespace DungeonCrawler.Characters
         {
             Name            = name;
             Health          = 100;
+            AttackPower     = 50;
         }
 
         /// <summary>

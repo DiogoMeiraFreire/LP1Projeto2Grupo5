@@ -26,7 +26,8 @@ namespace DungeonCrawler.Characters
         public Enemy(string name = "Enemy", Room room = null)
         {
             Name            = name;
-            Health           = 100;
+            Health          = 100;
+            AttackPower     = 15;
             E_room = room;
             //L_Index = room.GetIndex(this);
             
@@ -59,12 +60,9 @@ namespace DungeonCrawler.Characters
             }   
         }
 
-
         public void Die()
         {
             room._enemies.Remove(this);
         }
-
-
     }
 }
