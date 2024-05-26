@@ -44,6 +44,10 @@ namespace DungeonCrawler
                     player.Attack(target);
                     Console.WriteLine(target.Name+", health:"+target.Health);
                     Console.WriteLine("\n");
+                    target.Attack(player);
+                    Console.WriteLine("Player, health:"+player.Health);
+                    Console.WriteLine("\n");
+
                     
                     MenuLogic();
                     }

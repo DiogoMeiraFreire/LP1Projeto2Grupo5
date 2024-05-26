@@ -34,7 +34,19 @@ namespace DungeonCrawler
             return player.Health <= 0;
         }
 
-    
+        public void DamageNumb()
+        {
+            (bool b, int i, int j, string room_name ) = map.CurrentRoom();
+            Enemy target =map.map_room[i, j]._enemies[0];
+            if (player.Health != 100)
+            {
+                //playerhealthdisp
+            }
+            if (target.Health != 100)
+            {
+                //display health
+            }
+        }
         public void Move(char direction)
         {
 
